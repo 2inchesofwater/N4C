@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+	<layout title="category">
+		<message>
+			<![CDATA[CATEGORY]]>
+		</message>
+	</layout>
+	
+	<state>
+		<name>CATEGORY</name>
+		<description>CATEGORY</description>
+		<url>
+			<param name="cid" description="Choose a category..." type="sql" default="" label="Category" query="SELECT `cid` as `cid`, `name` as `title`  FROM #__m4j_category" key_field="cid" value_field="title">
+			</param>			
+		</url>		
+		<params>
+		 <param type="spacer" default="&lt;script type=&quot;text/javascript&quot; src=&quot;index.php?option=com_proforms&amp;section=xhr&amp;xhr=cid_js&quot;&gt;&lt;/script&gt;"></param>
+		</params>
+	</state>
+	
+	<fields name="request">
+		<fieldset name="request">
+			<field name="cid"
+				type="sql"
+				description="Choose a form..."
+				label="Category"
+				required="true"
+				query="SELECT `cid` as `cid`, `name` as `cname`  FROM #__m4j_category" key_field="cid" value_field="cname"
+			/>
+		
+		<field 
+				name="spacer"
+				type="spacer"
+				class="text"
+				hr="false"
+				label="&lt;script type=&quot;text/javascript&quot;&gt;function gup( name ){  name = name.replace(/[\[]/,&quot;\\\[&quot;).replace(/[\]]/,&quot;\\\]&quot;);  var regexS = &quot;[\\?&amp;]&quot;+name+&quot;=([^&amp;#]*)&quot;;  var regex = new RegExp( regexS );  var results = regex.exec( window.location.href );  if( results == null )    return &quot;&quot;;  else    return results[1];}document.getElementById(&quot;jform_request_cid&quot;).value = gup(&quot;cid&quot;);&lt;/script&gt;"
+			/>		
+		</fieldset>
+	</fields>
+</metadata>

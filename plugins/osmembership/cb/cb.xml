@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.6.0" type="plugin" group="osmembership" method="upgrade">
+	<name>OS Membership - CB plugin</name>
+	<author>Tuan Pham Ngoc</author>
+	<creationDate>Apirl 2012</creationDate>
+	<copyright>Ossolution Team</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>contact@joomdonation.com</authorEmail>
+	<authorUrl>www.joomdonation.com</authorUrl>
+	<version>1.0</version>
+	<description>This plugin is used to create a CB account for user when they subscribe to a Subscription Plan in OS Membership</description>
+	<files>
+		<filename plugin="cb">cb.php</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.plg_osmembership_cb.ini</language>		
+	</languages>
+	<params>
+		<param name="block_user_on_membership_expire" type="radio" default="0" label="Block User when Memebrship Expired" description="Block User when Memebrship Expired">
+		  <option value="0">No</option>
+		  <option value="1">Yes</option>
+		</param>		
+	</params>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="block_user_on_membership_expire" type="radio" default="0" label="Block User when Memebrship Expired" description="Block User when Memebrship Expired">
+				  <option value="0">No</option>
+				  <option value="1">Yes</option>
+				</field>						
+			</fieldset>
+		</fields>
+	</config>				
+</extension>

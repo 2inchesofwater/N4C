@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form  addrulepath="/administrator/components/com_geocontent/models/rules">
+    <fieldset>
+        <field name="id"
+               type="hidden"
+               default="0"
+               class="readonly"
+               />
+        <field name="contentid"
+               type="text"
+               label="COM_GEOCONTENT_LINK_TO_EXISTING_ARTICLE"
+               description="COM_GEOCONTENT_LINK_TO_EXISTING_ARTICLE_DESC"
+               default="0"
+               size="8"
+               class="readonly"
+               readonly="true"
+               />
+        <field name="created_by" type="user"
+               label="COM_GEOCONTENT_FIELD_CREATED_BY_LABEL"
+               description="COM_GEOCONTENT_FIELD_CREATED_BY_DESC"
+               />
+        <field name="language" type="contentlanguage" label="JFIELD_LANGUAGE_LABEL"
+               description="COM_GEOCONTENT_FIELD_LANGUAGE_DESC" class="inputbox">
+               <option value="*">JALL</option>
+        </field>
+
+       <field
+              name="contentname"
+              type="text"
+              label="Item title"
+              description="Balloon title for this item"
+              size="40"
+              class="inputbox"
+              default=""
+              required="true"
+              />
+        <field
+              name="url"
+              type="text"
+              label="COM_GEOCONTENT_URL"
+              description="COM_GEOCONTENT_URL_DESC"
+              size="40"
+              class="inputbox"
+              default=""
+              required="false"
+              />
+        <field
+              name="minlat"
+              type="hidden"
+              label="Min latitude"
+              description=""
+              size="40"
+              class="inputbox readonly"
+              default=""
+              required="false"
+              readonly="true"
+              />
+        <field
+              name="minlon"
+              type="hidden"
+              label="Min longitude"
+              description=""
+              size="40"
+              class="inputbox readonly"
+              default=""
+              required="false"
+              readonly="true"
+              />
+        <field
+              name="maxlat"
+              type="hidden"
+              label="Max latitude"
+              description=""
+              size="40"
+              class="inputbox readonly"
+              default=""
+              required="false"
+              />
+        <field
+              name="maxlon"
+              type="hidden"
+              label="Max longitude"
+              description=""
+              size="40"
+              class="inputbox readonly"
+              default=""
+              required="false"
+              />
+        <field
+              name="geodata"
+              type="olmap"
+              label="Geodata"
+              description="WKT format"
+              size="40"
+              class="inputbox readonly"
+              default=""
+              required="false"
+              validate=""
+              />
+        <field
+              name="content"
+              type="editor"
+              label="Item content"
+              description="Balloon content"
+              size="40"
+              class="inputbox"
+              required="false"
+              filter="GeoContentHelper::filterText"
+              buttons="true"
+              />
+        <!--field
+              name="layerid"
+              type="sql"
+              query="SELECT name AS layerid, id AS value FROM #__geocontent_layer ORDER BY name"
+              label="COM_GEOCONTENT_LAYER"
+              description="COM_GEOCONTENT_LAYER_DESC"
+              size="1"
+              class="inputbox"
+              default=""
+              required="false"
+              /-->
+        <field
+                 name="layerid"
+                 type="layerslist"
+                 query="SELECT name AS layerid, id AS value FROM #__geocontent_layer ORDER BY name"
+                 label="COM_GEOCONTENT_LAYER"
+                 description="COM_GEOCONTENT_LAYER_DESC"
+                 size="1"
+                 class="inputbox"
+                 default=""
+                 required="false"
+                 />
+
+        <field
+              name="gpx"
+              type="file"
+              label="COM_GEOCONTENT_LOAD_GPX_TRACK"
+              description="COM_GEOCONTENT_LOAD_GPX_TRACK_DESC"
+              class="inputbox"
+              default=""
+              accept="application/gpx+xml"
+              required="false"
+              />
+    </fieldset>
+</form>

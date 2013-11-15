@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.6,0" type="plugin" group="system" method="upgrade">
+	<name>OS Membership URLs</name>
+	<author>Tuan Pham Ngoc</author>
+	<creationDate>April 2012</creationDate>
+	<author>Tuan Pham Ngoc</author>
+  	<authorEmail>contact@joomdonation.com</authorEmail>
+  	<authorUrl>http://www.joomdonation.com</authorUrl>
+  	<copyright>Copyright (C) 2012 Ossolution Team</copyright>
+  	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<version>1.0.0</version>
+	<description>This plugin check to see whether users can access to an URL. Only publish it if you use OS Membership URLS plugin to restrict access for members</description>
+	<languages>
+		<language tag="en-GB">en-GB.plg_osmembershipurls.ini</language>		
+	</languages>	
+	<files>
+		<filename plugin="osmembershipurls">osmembershipurls.php</filename>
+		<filename>index.html</filename>		
+	</files>			
+</extension>

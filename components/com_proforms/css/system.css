@@ -1,0 +1,54 @@
+@CHARSET "UTF-8";
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* Next are some system classes which may not removed or changed if you want that proforms works propper */
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+/*Don't delete or change this */
+.m4jFormElementWrap{
+	margin: 0px;
+	padding:0px;
+	border: none;
+	border: 1px solid transparent;
+}
+
+* html .m4jFormElementWrap{
+	border: 1px solid none;
+}
+
+/*Don't delete or change this */
+.m4jRadioWrap, .m4jCheckboxWrap{
+	margin: 0px;
+	padding:0px;
+	border: none;
+	float: left;
+	border: 1px solid transparent;
+}
+* html .m4jRadioWrap, * html .m4jCheckboxWrap {
+	border: 1px solid none;
+}
+
+/* clr */
+.m4jCLR{
+	clear:both;	
+}
+
+/*Don't delete this. It hides the spam trap */
+div.m4j-email{
+	display:none;
+}
+
+
+/*This is the class for the JS function scroll down to confirm reading. More information at the helpdesk */
+
+.m4jScrollConfirm{
+	display:block;
+	overflow-x: hidden; 
+	overflow-y: scroll;
+	border: 1px solid #ababab;
+}
+
+.m4jOff{
+	display: none;
+}
+

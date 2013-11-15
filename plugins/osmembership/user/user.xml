@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.6.0" type="plugin" group="osmembership" method="upgrade">
+	<name>OS Membership User</name>
+	<author>Tuan Pham Ngoc</author>
+	<creationDate>April 2012</creationDate>
+	<author>Tuan Pham Ngoc</author>
+  	<authorEmail>contact@joomdonation.com</authorEmail>
+  	<authorUrl>http://www.joomdonation.com</authorUrl>
+  	<copyright>Copyright (C) 2012 Ossolution Team</copyright>
+  	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>  				
+	<version>1.0.0</version>
+	<description>This plugin allows activate user account when his subscription is activated and de-activate his account when his subscription expired</description>
+	<files>
+		<filename plugin="user">user.php</filename>
+		<filename>index.html</filename>
+	</files>	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="block_account_when_expired" type="radio" label="Block account when subscription expired" default="0">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>	
+			</fieldset>
+		</fields>
+	</config>
+	<params>
+			<param name="block_account_when_expired" type="radio" label="Block account when subscription expired" default="0">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+			</param>	
+	</params>
+</extension>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<view title="confirmation" hidden="true">
+		<message><![CDATA[Registration Confirmation Page]]></message>
+	</view>
+</metadata>

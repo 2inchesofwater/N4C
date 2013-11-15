@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0" method="upgrade">
+	<name>Up-coming events</name>
+	<author>Tuan Pham Ngoc</author>
+	<creationDate>Aug 2010</creationDate>
+	<copyright>Ossolution Team</copyright>
+	<license>Commercial</license>
+	<authorEmail>contact@joomdonation.com</authorEmail>
+	<authorUrl>www.joomdonation.com</authorUrl>
+	<version>1.2</version>
+	<description>This module is used to display up-coming events in Events Booking</description>
+	<files>
+		<filename module="mod_eb_events">index.html</filename>
+		<filename module="mod_eb_events">mod_eb_events.php</filename>		
+		<filename module="mod_eb_events">tmpl/default.php</filename>
+		<filename module="mod_eb_events">tmpl/index.html</filename>
+		<filename module="mod_eb_events">css/style.css</filename>		
+	</files>	
+	<params>
+		<param name="moduleclass_sfx" type="text"
+			label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX">
+		</param>
+		<param name="category_ids" type="text"
+			label="Categories IDs" description="Enter List of Category which you want to display events, comma seperated" default="">
+		</param>		
+		<param name="show_category" type="list" label="Show Category" description="Choose whether to show or hide category name in the module" default="1">
+			<option value="1">Yes</option>	
+			<option value="0">No</option>	
+		</param>		
+		<param name="show_location" type="list" label="Show Location" description="Choose whether to show or hide location of events in the module" default="0">
+			<option value="1">Yes</option>	
+			<option value="0">No</option>	
+		</param>		
+		<param name="number_events" type="text"
+			label="Number Events" description="Number of events to be showed on the module" default="6">
+		</param>				
+		<param name="item_id" type="text"
+			label="Menu Item ID" description="Menu Item ID" default="">
+		</param>
+	</params>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+						<field name="moduleclass_sfx" type="text"
+							label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX">
+						</field>
+						<field name="category_ids" type="text"
+							label="Categories IDs" description="Enter List of Category which you want to display events, comma seperated" default="">
+						</field>		
+						<field name="show_category" type="list" label="Show Category" description="Choose whether to show or hide category name in the module" default="1">
+							<option value="1">Yes</option>	
+							<option value="0">No</option>	
+						</field>		
+						<field name="show_location" type="list" label="Show Location" description="Choose whether to show or hide location of events in the module" default="0">
+							<option value="1">Yes</option>	
+							<option value="0">No</option>	
+						</field>		
+						<field name="number_events" type="text"
+							label="Number Events" description="Number of events to be showed on the module" default="6">
+						</field>		
+						<field name="item_id" type="text"
+							label="Menu Item ID" description="Menu Item ID" default="">
+						</field>
+			</fieldset>
+		</fields>		
+	</config>	
+</install>

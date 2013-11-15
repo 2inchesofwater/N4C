@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0" method="upgrade">
+	<name>EB Cart</name>
+	<author>Tuan Pham Ngoc</author>
+	<creationDate>Jan 2010</creationDate>
+	<copyright>Ossolution Team</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>contact@joomservices.com</authorEmail>
+	<authorUrl>www.joomservices.com</authorUrl>
+	<version>1.0.0</version>
+	<description>This module is used to display list of events which registrants has added to cart</description>
+	<files>
+		<filename module="mod_eb_cart">mod_eb_cart.php</filename>		
+		<filename module="mod_eb_cart">tmpl/default.php</filename>
+	</files>
+	<params>
+		<param name="moduleclass_sfx" type="text"
+			label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX">
+		</param>		
+		<param name="item_id" type="text"
+			label="Itemid" description="Itemid variable in the link in module">
+		</param>		
+	</params>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="moduleclass_sfx" type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />				
+				<field name="item_id" type="text"
+					label="Itemid" description="Itemid variable in the link in module">
+				</field>	
+			</fieldset>
+		</fields>		
+	</config>
+</install>

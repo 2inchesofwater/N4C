@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install SYSTEM "http://dev.joomla.org/xml/1.5/component-install.dtd">
+<install type="component" version="1.5.0" method="upgrade">
+  <name>Event Booking</name>
+  <creationDate>July 2010</creationDate>
+  <author>Tuan Pham Ngoc</author>
+  <authorEmail>contact@joomdonation.com</authorEmail>
+  <authorUrl>http://www.joomdonation.com</authorUrl>
+  <copyright>Copyright (C) 2010 Ossolution Team</copyright>
+  <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+  <version>1.4.4</version>
+  <description>Event Booking is a simple, secure, extendable, intuititive event registration extension for Joomla 1.5, 1.6, 1.7, 2.5.</description> 
+  <install>
+    <sql>
+      <file driver="mysql" charset="utf8">sql/install.eventbooking.sql</file>
+    </sql>
+  </install>  
+  <uninstall>
+    <sql>
+      <file driver="mysql" charset="utf8">sql/uninstall.eventbooking.sql</file>
+    </sql>
+  </uninstall>
+  <media destination="com_eventbooking" folder="site/media">	
+	<filename>.htaccess</filename>		
+	<filename>index.html</filename>
+  </media>
+  <languages>
+	<language tag="en-GB">site/languages/en-GB/en-GB.com_eventbooking.ini</language>
+  </languages>
+  <files folder="site">  
+    <filename>index.html</filename>
+    <filename>eventbooking.php</filename>
+    <filename>controller.php</filename>	
+    <filename>fields.xml</filename>	
+    <folder>models</folder>		    
+    <folder>views</folder>        
+    <folder>helper</folder>
+    <folder>payments</folder>
+    <folder>assets</folder>    
+    <folder>emailtemplates</folder>    
+  </files>
+  <administration>
+    <menu>Event Booking</menu>
+    <submenu>
+	<menu link="option=com_eventbooking&amp;task=show_configuration">Configuration</menu>      	
+	<menu link="option=com_eventbooking&amp;task=show_categories">Categories</menu>      		
+	<menu link="option=com_eventbooking&amp;task=show_events">Events</menu>	  	 	
+	<menu link="option=com_eventbooking&amp;task=show_registrants">Registrants</menu>	  		
+	<menu link="option=com_eventbooking&amp;task=show_fields">Custom Fields</menu>  			
+	<menu link="option=com_eventbooking&amp;task=show_locations">Locations</menu>
+	<menu link="option=com_eventbooking&amp;task=show_coupons">Coupons</menu>  
+	<menu link="option=com_eventbooking&amp;task=show_plugins">Payments Plugin</menu>  	  		     
+	<menu link="option=com_eventbooking&amp;task=show_translation">Translation</menu>      
+	<menu link="option=com_eventbooking&amp;task=csv_export">Export Registrants</menu>
+	<menu link="option=com_eventbooking&amp;task=show_waitings">Waiting List</menu>	  	
+	<menu link="option=com_eventbooking&amp;task=show_massmail_form">Mass Mail</menu>
+    </submenu>    
+    <languages>
+	<language tag="en-GB">admin/languages/en-GB/en-GB.com_eventbooking.sys.ini</language>      
+	<language tag="en-GB">admin/languages/en-GB/en-GB.com_eventbooking.ini</language>
+  </languages>
+    <files folder="admin">
+	<filename>index.html</filename>
+	<filename>eventbooking.php</filename>
+	<filename>controller.php</filename>                	
+	<folder>assets</folder>	
+	<folder>models</folder>
+	<folder>views</folder>	  
+	<folder>tables</folder>		
+	<folder>elements</folder>
+	<folder>sql</folder>
+    </files>    
+  </administration>
+  <installfile>install.eventbooking.php</installfile>
+</install>

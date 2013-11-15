@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="component" version="1.6" method="upgrade">
+    <name>COM_GEOCONTENT</name>
+    <creationDate>2012-06-05</creationDate>
+    <author>Alessandro Pasotti (ItOpen)</author>
+    <authorUrl>http://www.itopen.it</authorUrl>
+    <copyright>Copyright 2010 ItOpen</copyright>
+    <license>GNU/AGPL</license>
+    <version>17_27</version>
+    <description>COM_GEOCONTENT_DESCRIPTION</description>
+
+    <!-- Installer Hooks -->
+    <!-- Runs on install/uninstall/update; New in 1.6 -->
+    <scriptfile>install.php</scriptfile>
+
+    <install>
+        <sql>
+            <file charset="utf8" driver="mysql">sql/install.sql</file>
+        </sql>
+    </install>
+
+    <uninstall>
+        <sql>
+            <file charset="utf8" driver="mysql">sql/uninstall.sql</file>
+        </sql>
+    </uninstall>
+    <update> <!-- Runs on update; New in 1.6 -->
+        <schemas>
+            <schemapath type="mysql">sql/updates</schemapath>
+        </schemas>
+    </update>
+
+    <files folder="site">
+        <filename>geocontent.php</filename>
+        <filename>controller.php</filename>
+        <filename>index.html</filename>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+        <folder>language</folder>
+        <folder>views</folder>
+    </files>
+
+    <media destination="com_geocontent" folder="media">
+        <filename>index.html</filename>
+        <folder>images</folder>
+        <folder>css</folder>
+        <folder>js</folder>
+    </media>
+
+
+    <administration>
+        <!-- Administration Menu Section -->
+        <menu img="components/com_geocontent/images/geocontent-16x16.png">COM_GEOCONTENT_MENU</menu>
+        <submenu>
+            <!--
+                Note that all & must be escaped to &amp; for the file to be valid
+                XML and be parsed by the installer
+                -->
+            <menu view="items" img="components/com_geocontent/images/geocontent-items-16x16.png"
+                  alt="GeoContent/Items">COM_GEOCONTENT_ITEMS</menu>
+        </submenu>
+        <files folder="admin">
+            <filename>index.html</filename>
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>geocontent.php</filename>
+            <folder>libs</folder>
+            <folder>sql</folder>
+            <folder>images</folder>
+            <folder>models</folder>
+            <folder>language</folder>
+            <folder>helpers</folder>
+            <folder>controllers</folder>
+            <folder>views</folder>
+            <folder>tables</folder>
+        </files>
+
+    </administration>
+    <modules>
+        <module folder="modules" module="mod_geocontent_geocoding" name="GeoContent GeoCoding Module" />
+    </modules>
+
+    <plugins>
+        <plugin folder="plugins/content" plugin="geocontent" name="Content - GeoContent" group="content" />
+        <plugin folder="plugins/editors-xtd" plugin="geocontent" name="Editors-xtd - GeoContent" group="editors-xtd" />
+    </plugins>
+
+</extension>

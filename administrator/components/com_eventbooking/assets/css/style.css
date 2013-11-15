@@ -1,0 +1,23 @@
+.icon-32-export {
+	background-image:url("../icons/export.png");
+}
+table.admintable td label {
+	clear: none ;
+	min-width: 40px;
+	margin : 3px 2px ;
+}
+
+table.admintable td.key {
+	font-weight: bold ;
+}
+
+fieldset.adminform {
+	background-color: white ;
+}
+
+table.admintable {
+	background-color: white ;	
+}
+div.current fieldset.eb_recurring_setting input, div.current fieldset.eb_recurring_setting img{
+	float: none ;
+}

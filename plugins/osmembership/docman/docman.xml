@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.6.0" type="plugin" group="osmembership" method="upgrade">
+	<name>OS Membership - Docman plugin</name>
+	<author>Tuan Pham Ngoc</author>
+	<creationDate>Apirl 2012</creationDate>
+	<copyright>Ossolution Team</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>contact@joomdonation.com</authorEmail>
+	<authorUrl>www.joomdonation.com</authorUrl>
+	<version>1.0</version>	
+	<description>This plugin is used to Add Subscribers to Docman Groups when they subscribe for a subscription plan.</description>
+	<files>
+		<filename plugin="docman">docman.php</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.plg_osmembership_docman.ini</language>		
+	</languages>
+	<params />
+	<config />		
+</extension>

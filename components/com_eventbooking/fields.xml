@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<params>
+		<param name="text_field" type="text" label="Text Field" size="50" description="This is a sample of text custom field"></param>
+		<param name="textarea_field" type="textarea" rows="10" cols="60" label="Text Area Field" description="This is a sample of textarea field"></param>		
+	</params>
+</config>

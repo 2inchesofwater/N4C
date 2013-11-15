@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS `#__m4j_captcha`;	
+DROP TABLE IF EXISTS `#__m4j_category`;		
+DROP TABLE IF EXISTS `#__m4j_formelements`;	
+DROP TABLE IF EXISTS `#__m4j_forms`;	
+DROP TABLE IF EXISTS `#__m4j_jobs`;
+DROP TABLE IF EXISTS `#__m4j_sef`;	
+DROP TABLE IF EXISTS `#__m4j_config`;	
+DROP TABLE IF EXISTS `#__m4j_apps`;	
+DROP TABLE IF EXISTS `#__m4j_apps2jobs`;

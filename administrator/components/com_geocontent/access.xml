@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<access component="com_geocontent">
+	<section name="component">
+		<action name="core.admin" title="JACTION_ADMIN" description="JACTION_ADMIN_COMPONENT_DESC" />
+		<action name="core.manage" title="JACTION_MANAGE" description="JACTION_MANAGE_COMPONENT_DESC" />
+		<action name="core.create" title="JACTION_CREATE" description="JACTION_CREATE_COMPONENT_DESC" />
+		<action name="core.delete" title="JACTION_DELETE" description="JACTION_DELETE_COMPONENT_DESC" />
+		<action name="core.edit" title="JACTION_EDIT" description="JACTION_EDIT_COMPONENT_DESC" />
+		<action name="core.edit.state" title="JACTION_EDITSTATE" description="JACTION_EDITSTATE_COMPONENT_DESC" />
+        <action name="core.edit.own" title="JACTION_EDITOWN" description="COM_GEOCONTENT_ITEM_ACCESS_EDITOWN_DESC" />
+        <action name="geocontent.delete.own" title="COM_GEOCONTENT_ITEM_ACCESS_DELETEOWN" description="COM_GEOCONTENT_ITEM_ACCESS_DELETEOWN_DESC" />
+        <action name="geocontent.custom_url" title="COM_GEOCONTENT_ITEM_ACCESS_CUSTOM_URL" description="COM_GEOCONTENT_ITEM_ACCESS_CUSTOM_URL_DESC" />
+        <action name="geocontent.unbound" title="COM_GEOCONTENT_ITEM_ACCESS_UNBOUND" description="COM_GEOCONTENT_ITEM_ACCESS_UNBOUND_DESC" />
+        <action name="geocontent.unlinked" title="COM_GEOCONTENT_ITEM_ACCESS_UNLINKED" description="COM_GEOCONTENT_ITEM_ACCESS_UNLINKED_DESC" />
+	</section>
+	<section name="layer">
+		<action name="core.create" title="JACTION_CREATE" description="COM_GEOCONTENT_LAYER_ACCESS_CREATE_DESC" />
+        <action name="core.delete" title="JACTION_DELETE" description="COM_GEOCONTENT_LAYER_ACCESS_DELETE_DESC" />
+        <action name="core.edit" title="JACTION_EDIT" description="COM_GEOCONTENT_LAYER_ACCESS_EDIT_DESC" />
+        <action name="core.edit.state" title="JACTION_EDITSTATE" description="COM_GEOCONTENT_LAYER_ACCESS_EDITSTATE_DESC" />
+        <action name="core.edit.own" title="JACTION_EDITOWN" description="COM_GEOCONTENT_ITEM_ACCESS_EDITOWN_DESC" />
+        <action name="geocontent.delete.own" title="COM_GEOCONTENT_ITEM_ACCESS_DELETEOWN" description="COM_GEOCONTENT_ITEM_ACCESS_DELETEOWN_DESC" />
+        <action name="geocontent.custom_url" title="COM_GEOCONTENT_ITEM_ACCESS_CUSTOM_URL" description="COM_GEOCONTENT_ITEM_ACCESS_CUSTOM_URL_DESC" />
+        <action name="geocontent.unbound" title="COM_GEOCONTENT_ITEM_ACCESS_UNBOUND" description="COM_GEOCONTENT_ITEM_ACCESS_UNBOUND_DESC" />
+        <action name="geocontent.unlinked" title="COM_GEOCONTENT_ITEM_ACCESS_UNLINKED" description="COM_GEOCONTENT_ITEM_ACCESS_UNLINKED_DESC" />
+	</section>
+    <!--section name="item">
+        <action name="core.delete" title="JACTION_DELETE" description="COM_GEOCONTENT_ITEM_ACCESS_DELETE_DESC" />
+        <action name="core.edit" title="JACTION_EDIT" description="COM_GEOCONTENT_ITEM_ACCESS_EDIT_DESC" />
+    </section>-->
+</access>

@@ -1,0 +1,44 @@
+#bubble_tooltip{
+	position:absolute;
+	display:block;
+	width:147px;
+	left: -9999em;
+	top:0px;
+  	z-index: 9999999;
+}
+#bubble_tooltip .bubble_top{
+	background-image: url('../../images/bubble_top.gif');
+	background-repeat:no-repeat;
+	height:16px;	
+}
+#bubble_tooltip .bubble_middle{
+	background-image: url('../../images/bubble_middle.gif');
+	background-repeat:repeat-y;	
+	background-position:bottom left;
+	padding-left:10px;
+	padding-right:7px;
+	text-align:left;
+}
+#bubble_tooltip .bubble_middle span{
+	position:relative;
+	top:-8px;
+	font-family: Trebuchet MS, Lucida Sans Unicode, Arial, sans-serif;
+	font-size:11px;
+	text-align:left;
+	vertical-align:top;
+}
+#bubble_tooltip .bubble_bottom{
+	background-image: url('../../images/bubble_bottom.gif');
+	background-repeat:no-repeat;	
+	height:44px;
+	position:relative;
+	top:-6px;
+}
+m4jInfoImage{
+	display:block;
+	border:none;
+	width:16px;
+	height:16px;
+	text-align: left;
+	vertical-align:top;
+}

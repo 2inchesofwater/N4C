@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.6" type="plugin" group="content" method="upgrade">
+	<name>Membership Plans content plugin</name>
+	<author>Ossolution Team</author>
+	<creationDate>Feb 2011</creationDate>
+	<copyright>Copyright (C) 2010 Ossolution Team</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>contact@joomdonation.com</authorEmail>
+	<authorUrl>www.joomdonation.com</authorUrl>
+	<version>1.5.0</version>
+	<description>This plugin is used to display subscription plans which you created in Membership Pro in a Joomla article. Using syntax {membershipplans ids="1,3,4,6"} or {membershipplans ids="cat-4"} or {membershipplans ids="*"} to display these plans into article</description>
+	<files>
+		<filename plugin="membershipplans">membershipplans.php</filename>
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="layout_type" type="list" label="Layout" description="Choose the layout you want to use to display subscription plans">
+					<option value="default">Default Layout</option>					
+					<option value="columns">Columns Layout</option>
+				</field>						
+			</fieldset>
+		</fields>	
+	</config>
+</extension>

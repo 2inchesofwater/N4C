@@ -1,0 +1,6 @@
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// @license: Mad4Media Javascipt License - copyright Mad4Media - Fahrettin Kutyol - All rights reserved    ++
+// (re-) publishing or forking for any purpose of commercial or non-commercial use is not allowed.		   ++
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+var proforms={dynamicArray:[],lookUp:[],get:function(id){return (this.lookUp["_"+id]!==undefined)?this.lookUp["_"+id]:null;},show:function(id){var _1=this.get(id);if(_1){_1.style.display="";}},hide:function(id){var _2=this.get(id);if(_2){_2.style.display="none";}},getValue:function(id){var _3=this.get(id);return (_3)?_3.node.value:null;},setValue:function(id,_4){var _5=this.get(id);if(_5){_5.node.value=_4;}}};dojo.addOnLoad(function(){dojo.forEach(pfmFields,function(_6){var _7=_byName("m4j-"+_6);if(_7){var _8=dojo.byId("m4je-"+_6);proforms.lookUp["_"+_6]={node:_7,wrap:_8,style:_8.style};}});setTimeout(function(){dojo.orderNodes();},5000);});

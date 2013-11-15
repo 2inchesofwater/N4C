@@ -1,0 +1,340 @@
+/* legacy - used to be the headline of a form, but now we use default Joomla's 'contentheading' 
+*  This can be changed in the CSS settings to  the following class m4j_heading */
+.m4j_heading {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #333333;
+	text-align: left;
+	vertical-align: top;
+	display: block;
+	margin: 0px;
+	overflow: hidden;
+	height: 16px;
+	width: auto;
+	padding: 0px;
+	padding-bottom: 2px;
+}
+
+/* Content after a headline (DIV) */
+.m4j_header_text {
+	font-size: 10px;
+	font-weight: normal;
+	color: #000000;
+	text-align: left;
+	vertical-align: top;
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	padding: 0px;
+	padding-bottom: 16px;
+}
+
+/* legacy */
+.m4j_wrap {
+	text-align: left;
+	vertical-align: top;
+	display: block;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	overflow: hidden;
+	position:relative;
+	float:left;
+
+}
+
+/* Headline of a listing item (DIV) */
+.m4j_list_heading {
+	text-align: left;
+	vertical-align: top;
+	display: block;
+	width: 100%;
+	overflow: hidden;
+}
+
+/* A - Tag of the listing headline which links to the next level or form  */
+.m4j_list_heading a, .m4j_list_heading a:link, .m4j_list_heading a:visited, .m4j_list_heading a:active{
+	font-weight:bold;
+	font-size: 14px;	
+}
+
+/* This is the inrotext of a listing item (DIV) */
+.m4j_list_intro {
+	font-size: 10px;
+	font-weight: normal;
+	color: #000000;
+	text-align: left;
+	vertical-align: top;
+	display: block;
+	padding: 0px;
+	width: 100%;
+	overflow: hidden;
+}
+
+/* DIV tag wraps the list item */
+.m4j_list_wrap {
+	text-align: left;
+	vertical-align: top;
+	display: block;
+	margin: 0px;
+	width: 100%;
+	overflow: hidden;
+	padding-top: 8px;
+	padding-right: 0px;
+	padding-bottom: 8px;
+	padding-left: 0px;
+	border:none;
+	border-bottom: 1px solid #cdcdcd;
+}
+
+/* legacy */
+.m4j_footer{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	color: #333333;
+	text-decoration: none;
+	text-align: right;
+	vertical-align: middle;
+	display: block;
+	margin: 0px;
+	height: 20px;
+	width: 100%;
+	border:none;
+	overflow: hidden;
+	padding:0px;
+	padding-top: 8px;
+}
+
+/* The DIV Tag which wraps all the form elelments */
+.m4j_form_wrap {
+	text-align: left;
+	vertical-align: top;
+	display: block;
+	margin: 0px;
+	width: 100%;
+	overflow: hidden;
+	padding: 0px; 
+	padding-top: 8px;
+	padding-bottom: 8px;
+	border:none;
+	float:left;
+}
+
+/*General setting to all tables used in Proforms*/
+div.m4j_form_wrap table.m4j_form_table, div.m4j_form_wrap table.m4j_form_table tr, div.m4j_form_wrap table.m4j_form_table td{
+	border: none !important	;
+}
+
+/*General class for input fields*/
+.m4j_form_wrap input{
+}
+/*General class if an input field focuses*/
+.m4j_form_wrap input:focus{
+	outline: 1px solid #bcbcbc;
+	background-color: #f8f8f8;
+}
+
+/*General class for textareas*/
+.m4j_form_wrap textarea{
+}
+/*General class if textarea focuses*/
+.m4j_form_wrap textarea:focus{
+	outline: 1px solid #bcbcbc;
+	background-color: #f8f8f8;
+}
+
+/*General class for selections*/
+.m4j_form_wrap select{
+}
+
+/*General class if selection focuses*/
+.m4j_form_wrap select:focus{
+	outline: 1px solid #bcbcbc;
+	background-color: #f8f8f8;
+}
+
+/* Class of the fieldset which you can assign in an layout */
+.m4j_form_wrap fieldset{
+	border: 1px solid #ababab;
+	margin:0px 3px;
+	margin-top: 5px;
+	padding:10px;
+	background: none;	
+}
+
+/* The legend of an fieldset */
+.m4j_form_wrap legend{
+	border: none;
+	padding: 0px 10px;
+}
+
+/* Form elements of a layout area are wraped in tables. this describes the table style */
+.m4j_form_table {
+	margin: 0px;
+	padding: 0px;
+	border: none;
+}
+
+/* This is the wrap class of an error prompt */
+.m4j_error {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FF0000;
+	text-align: left;
+	vertical-align: middle;
+	display: block;
+	margin: 0px;
+	padding: 0px;
+	height: auto;
+	width: 100%;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+}
+
+/* wraps the submit and reset button of some captchas */
+.m4j_submit_wrap {
+	text-align: center;
+	vertical-align: middle;
+	display: block;
+	width: 100%;
+	margin: 0px;
+	padding:0px;
+	border:none;
+}
+
+/* The submit button */
+.m4j_submit{
+}
+
+/* The reset button */
+.m4j_reset{
+}
+
+/* Align any element to right */
+.m4j_toRight {
+	float: right;
+}
+
+/* Align any element to left */
+.m4j_toLeft {
+	float: left;
+}
+
+/* legacy */
+.m4j_help {
+	float: right;
+	display: block;
+	margin: 0px;
+	padding: 0px;
+	padding-left: 8px;
+	border:none;
+}
+
+/* the table which wraps the captcha. All including tag stylesheets can be inherited from this class */
+.m4j_captcha_table {
+	background-color: #E9E9E9;
+	border: 1px dotted #333333;
+	padding-top: 5px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	display: table;
+}
+
+/* Oh my goodness. The captcha_ADVICE :) sorry for my english, means the ADVISE text of a captcha (not reCaptcha) */
+.m4j_captcha_advice {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	color: #000000;
+}
+
+/* This is the class of the star which gives the required advise. Default color is red */
+.m4j_required {
+	font-weight: bold;
+	color: #FF0000;
+	text-decoration: none;
+}
+
+/*
+* The following classes are specific classes of Proform's form elements. 
+* Other actions like hover or focus can be inherited of this classes.
+*/
+
+/* Specific class of a normal input field */
+.m4jInputField{
+	border: 1px solid #ababab;
+}
+
+/* Specific class of a text area */
+.m4jTextArea{
+	border: 1px solid #ababab;
+}
+
+/* Specific class of a selection. */
+.m4jSelection{
+	border: 1px solid #ababab;
+}
+
+/* Specific class of multiple selections */
+.m4jMultipleSelection{
+	border: 1px solid #ababab;
+}
+
+/* Specific class of an upload field */
+.m4jAttachment{
+	border: 1px solid #ababab;
+}
+
+/* Div Tag which raps a radio or check box, including the information (label).
+   This is aligned horizontal. */
+.m4jSelectItem{
+	display:block;
+	float: left;
+	text-align: left;
+	vertical-align: middle;
+	white-space:nowrap;
+	margin-right: 4px;
+	margin-bottom: 2px;
+	line-height: 100%;
+}
+
+/* This is the second class which will be added to m4jSelectItem to align the items vertical */
+.m4jSelectItemVertical{
+	margin:0px;
+	margin-bottom: 2px;
+	line-height: 100%;	
+}
+
+/* Input tags inside the wrapping div tag */
+.m4jSelectItem input{
+	margin:0px;
+	padding:0px;
+	float:left;
+	margin-right: 3px;
+}
+
+/* Specific class of a check box */
+.m4jCheckBox{
+	margin-right: 5px;
+}
+
+/* Specific class of a radio button */
+.m4jRadio{
+	margin-right: 5px;	
+}
+
+/* Class for the div tag which wraps the checkbox and the label which are asking for confirmation */
+/* Includes a checkbox and a label tag which classes can be inherited of this one */
+.m4jAsk2Confirm{
+	float:left;
+	padding-top:5px; 
+	vertical-align:top; 
+	text-align: left;	
+	
+}

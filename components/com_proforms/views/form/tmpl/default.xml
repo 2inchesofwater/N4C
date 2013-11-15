@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="form">
+		<message>
+			<![CDATA[FORM]]>
+		</message>
+	</layout>
+	
+	<state>
+		<name>FORM</name>
+		<description>FORM</description>
+		<url addpath="/administrator/components/com_proforms/">	
+		<param name="jid" type="sql" description="Choose a form..." default="" label="Form" query="SELECT `jid` as `fid`, `title` as `jid` FROM #__m4j_jobs" key_field="fid" value_field="jid"/>			
+		
+		</url>		  			
+		
+		<params>
+		<params type="spacer" default="&lt;script type=&quot;text/javascript&quot;&gt;function gup( name ){  name = name.replace(/[\[]/,&quot;\\\[&quot;).replace(/[\]]/,&quot;\\\]&quot;);  var regexS = &quot;[\\?&amp;]&quot;+name+&quot;=([^&amp;#]*)&quot;;  var regex = new RegExp( regexS );  var results = regex.exec( window.location.href );  if( results == null )    return &quot;&quot;;  else    return results[1];}document.getElementById(&quot;urlparamsjid&quot;).value = gup(&quot;jid&quot;);&lt;/script&gt;"></params>
+		</params>
+	</state>
+	
+	<fields name="request">
+		<fieldset name="request">
+			<field name="jid"
+				type="sql"
+				description="Choose a form..."
+				label="Form"
+				required="true"
+				query="SELECT `jid` as `fid`, `title` as `jid` FROM #__m4j_jobs" key_field="fid" value_field="jid"
+			/>
+		
+		<field 
+				name="spacer"
+				type="spacer"
+				class="text"
+				hr="false"
+				label="&lt;script type=&quot;text/javascript&quot;&gt;function gup( name ){  name = name.replace(/[\[]/,&quot;\\\[&quot;).replace(/[\]]/,&quot;\\\]&quot;);  var regexS = &quot;[\\?&amp;]&quot;+name+&quot;=([^&amp;#]*)&quot;;  var regex = new RegExp( regexS );  var results = regex.exec( window.location.href );  if( results == null )    return &quot;&quot;;  else    return results[1];}document.getElementById(&quot;jform_request_jid&quot;).value = gup(&quot;jid&quot;);&lt;/script&gt;"
+			/>		
+		</fieldset>
+	</fields>
+	
+</metadata>

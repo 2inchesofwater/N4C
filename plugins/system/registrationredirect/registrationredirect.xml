@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.6" type="plugin" group="system" method="upgrade">
+	<name>OS Membership Registration Redirect</name>
+	<author>Tuan Pham Ngoc</author>
+	<creationDate>April 2012</creationDate>
+	<author>Tuan Pham Ngoc</author>
+  	<authorEmail>contact@joomdonation.com</authorEmail>
+  	<authorUrl>http://www.joomdonation.com</authorUrl>
+  	<copyright>Copyright (C) 2012 Ossolution Team</copyright>
+  	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>  				
+	<version>1.5.1</version>
+	<description>This plugin is used to redirect users to Membership Pro subscription page when they try to access to Joomla OR CB Registration page</description>
+	<files>
+		<filename plugin="registrationredirect">registrationredirect.php</filename>
+		<filename>index.html</filename>
+	</files>	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="redirect_url" type="text" label="Subscription Page URL" default="" description="Enter the url of subscription plans page on your site. Leave it empty to use default url (which displays list of subscription plans" />
+			</fieldset>
+		</fields>
+	</config>	
+</extension>

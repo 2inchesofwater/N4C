@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="App">
+		<message>
+			<![CDATA[APP]]>
+		</message>
+	</layout>
+	
+	<state>
+		<name>Proforms Apps</name>
+		<description>APP</description>
+		
+		<url addpath="/administrator/components/com_proforms/">	
+		<param name="jid" type="sql" description="Choose a form..." default="" label="Form" query="SELECT `jid` as `fid`, `title` as `jid` FROM #__m4j_jobs" key_field="fid" value_field="jid"/>			
+		<param name="app" type="list" description="Choose an App..." default="" label="App" >
+			<option value="">Select an App</option>
+		</param>			
+		</url>
+		
+		<params>
+		<params type="spacer" default="&lt;script type=&quot;text/javascript&quot; src=&quot;../components/com_proforms/js/dojo.js&quot;&gt;&lt;/script&gt;"></params>
+		<params type="spacer" default="&lt;script type=&quot;text/javascript&quot; src=&quot;components/com_proforms/js/appmenu.js&quot;&gt;&lt;/script&gt;"></params>
+		</params>
+	</state>
+	
+	<fields name="request">
+		<fieldset name="request">
+			<field name="jid"
+				type="sql"
+				description="Choose a form..."
+				label="Form"
+				required="true"
+				query="SELECT `jid` as `fid`, `title` as `jid` FROM #__m4j_jobs" key_field="fid" value_field="jid"
+			/>
+		
+		<field
+			name="app"
+			type="list"
+			label="App"
+			description="Choose an App...">
+		</field>
+		
+		
+		<field 
+			name="spacer"
+			type="spacer"
+			class="text"
+			hr="false"
+			label="&lt;script type=&quot;text/javascript&quot; src=&quot;../components/com_proforms/js/dojo.js&quot;&gt;&lt;/script&gt;"
+		/>	
+		
+		<field 
+			name="spacer2"
+			type="spacer"
+			class="text"
+			hr="false"
+			label="&lt;script type=&quot;text/javascript&quot; src=&quot;components/com_proforms/js/appmenu16.js&quot;&gt;&lt;/script&gt;"
+		/>		
+		</fieldset>
+	</fields>
+	
+</metadata>

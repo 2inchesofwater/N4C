@@ -1,0 +1,850 @@
+/* ---------- Reset styles ------------------------------------- */
+img { border: 0 none; }
+
+h1.eb_title,
+h2.eb_title,
+h3.eb_title { width: auto !important; margin: 0 !important; padding: 0 !important; }
+
+h2.search_result_header {
+	margin-bottom: 8px ;
+}
+
+h1.location_header {
+	font-weight: normal ;
+	font-size: 12 px;
+}
+
+/* Remove the following line if you have problems with the alignment of your theme */
+.clr { clear: both; }
+
+
+.eb_props {
+	width: 240px;	
+}
+
+
+/* ---------- Global styles ------------------------------------ */
+
+#eb_header {
+	height: 55px;
+	border-bottom: 1px dotted #ddd;
+	text-align: center;
+}
+#eb_header div {
+	float: left;
+	padding: 3px;
+	width: 30%;
+}
+#eb_header a, #eb_header span  {
+	display: block;
+	padding-bottom: 5px;
+	text-decoration:none;
+	text-align: center;
+}
+
+#eb_pathway {
+	font-size: 11px;
+	text-align: left;
+	background: #ddd;
+	margin-bottom: 5px;
+	padding: 3px 3px 3px 10px;
+}
+
+.eb_row { background: #FFF url(../images/bg-gradient.png) repeat-x; }
+
+
+/* ---------- Categories styles ------------------------------------- */
+
+#eb_cats 	{ text-align: left; }
+
+#eb_cats h2.eb_title { margin: 14px 0 !important; }
+#eb_cats h3.eb_title { margin: 0 0 7px 0 !important; }
+
+#eb_cats .eb_row { padding: 15px; }
+
+#eb_cats .eb_row img {
+	float: left !important;
+	margin: 0 10px 0 0 !important;
+	padding: 0 !important;
+}
+
+/* ---------- Category styles --------------------------------------- */
+
+.eb_cat { padding: 10px 0; }
+.eb_cat h1.eb_title { margin: 0 0 10px 0 !important; }
+
+.eb_cat img.eb_thumb-left 	{ margin: 0 15px 0 0 !important; float: left !important; }
+.eb_cat img.eb_thumb-right 	{ margin: 0 0 0 15px !important; float: right !important; }
+
+
+/* ---------- Events styles -------------------------------------- */
+
+#eb_docs { text-align: left; }
+#eb_docs h2.eb_title { margin: 14px 0 !important; }
+#eb_docs h3.eb_title { 
+	margin: 0 0 10px 0 !important; 
+	padding: 15px 0 5px 0 !important;
+	min-height: 30px !important;
+	height: auto !important;
+  	height: 30px;
+}
+
+#eb_docs h3.eb_title img { float: left !important; margin: 0 10px 0 0; }
+
+#eb_docs .eb_row { padding: 0 15px 15px 15px; }
+
+#eb_docs .eb_row .eb_details {
+	float: right;
+	width: 200px;
+	margin: 0 0 0 10px;
+}
+
+#eb_docs .eb_row .eb_details div {
+	width: 100%;
+	margin: 0 0 5px 0;
+	padding: 3px 0;
+	text-align: center;
+	border: 1px dotted #E0E0E0;
+	background: #F8F8F8;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+}
+
+#eb_docs .eb_row .eb_details table {
+	padding: 5px 0 0 0 !important;
+	margin: 0 !important;
+	border: 1px dotted #D0D0D0;
+	width: 100%;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+}
+
+#eb_docs .eb_row .eb_details td {
+	padding: 0 0 5px 5px !important;
+	margin: 0 !important;
+}
+
+#eb_docs .eb_row .eb_description {
+	padding: 0 5px 0 0; margin: 0;
+}
+/* ---------- Details styles ---------------------------------------- */
+#eb_details {
+	clear:left;
+	width: 100%;
+	text-align: left;
+	float: left;
+	margin: 15px 15px 25px 0px;
+}
+#eb_details img {
+	margin: 10px 10px 10px 0px;
+}
+#eb_details table {
+	width: 100%;
+	border-top: 1px solid #D0D0D0;
+	border-left: 1px solid #D0D0D0;
+	border-collapse: collapse;
+}
+#eb_details table caption {
+	margin: auto;
+	padding: 5px 0 5px 0;
+	font-weight: bold;
+}
+#eb_details table td {
+	padding: 5px;
+	border-right: 1px solid #D0D0D0;
+	border-bottom: 1px solid #D0D0D0;
+}
+#eb_details table thead 	{ background: url(../images/bg-header.png) #F8F8F8 bottom repeat-x; font-weight: bold; padding: 5px; }
+#eb_details table thead td 	{ text-align: left; }
+#eb_details table col#prop 	{ width: 25%; }
+/* ---------- Taskbar styles ---------------------------------------- */
+.eb_taskbar {
+	padding: 0 0 6px 0;
+	margin: 0 0 6px 0;
+	list-style-type: none;
+}
+.eb_taskbar ul {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+.eb_taskbar li {
+	float: left !important;
+	list-style-type: none !important;
+	background-image: none !important;
+	padding: 0 5px 0 0 !important;
+	margin: 0.5em 0 2px 0 !important;
+}
+.eb_taskbar li a {
+	display: block;
+	padding: 4px 15px;
+	background: url(../images/button.png) #F8F8F8 bottom repeat-x;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+}
+.eb_taskbar li a:link,
+.eb_taskbar li a:visited,
+.eb_taskbar li a:hover {
+	text-decoration: none;
+}
+.eb_taskbar li a:link,
+.eb_taskbar li a:visited {
+	border: 1px solid #cecece;
+}
+.eb_taskbar li a:hover {
+   border-bottom: 1px solid #cecece;
+   border-top: 1px solid Gray;
+   border-right: 1px solid #cecece;
+   border-left: 1px solid Gray;
+}
+/* --- tabs --- */
+dl.tabs {
+	float: left;
+	margin: 10px 0 -1px 0;
+	z-index: 50;
+}
+dl.tabs dt {
+	float: left;
+	padding: 4px 10px;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	margin-left: 3px;
+	background: #f0f0f0;
+	color: #666;
+}
+
+dl.tabs dt.open {
+	background: #F9F9F9;
+	border-bottom: 1px solid #F9F9F9;
+	z-index: 100;
+	color: #000;
+}
+
+div.current {
+	clear: both;
+	border: 1px solid #ccc;
+	padding: 10px 10px;
+}
+
+div.current dd {
+	padding: 0;
+	margin: 0;
+}
+
+.title_cell {
+	font-weight: bold ;
+	padding-left: 5px;
+}
+
+.field_cell {
+	
+}
+.required {
+	color: red ;
+	padding-left: 5px;
+}
+.heading {
+	font-size: 15px;
+	font-weight: bold;
+	text-decoration: underline;
+}
+/*************The below css was commented to use template css. Uncomment it if you want to use this style******************/
+/*.sectiontableheader {
+	background: #333;
+	border: 1px solid #d5d5d5;
+	color: #fff;
+	padding: 5px;
+}
+
+.sectiontableheader a,
+.sectiontableheader a:hover,
+.sectiontableheader a:focus,
+.sectiontableheader a:active { color: #fff; }
+
+.sectiontableentry,
+.sectiontableentry0,
+.sectiontableentry1,
+.sectiontableentry2 {
+	background: url(../images/dot2.gif) repeat-x bottom;
+	padding: 5px 5px 6px;
+}
+
+.sectiontableentry:hover,
+.sectiontableentry0:hover,
+.sectiontableentry1:hover,
+.sectiontableentry2:hover { background-color: #fffff0; }
+
+.sectiontableentry2 { background-color: #f6f6f6; }
+*/
+.info {
+	color : #2C79B3 ;
+	margin-top: 10px;
+}
+
+.price_col {
+	width : 10%;
+	text-align: right ;
+}
+.order_col {
+	width : 13%;
+	text-align: center ;
+}
+table.item_list {	
+	margin-top: 10px;
+}
+table.doc_list {
+	
+}
+.no_col {
+	width: 5%;
+}
+.date_col {
+	width: 20% ;
+}
+.capacity_col {
+	width: 8%;
+}
+.registered_col {
+	width: 8% ;
+}
+/** PRODUCT LIST */
+#eb_docs h4  {
+	font-size: 150%;
+	padding: 0;
+	margin: 0 0 15px 0;
+}
+#eb_docs h4 a {
+	font-weight: bold;
+}
+#eb_docs dl {
+	background: none repeat scroll 0 0 #ECF4FB;
+	border: 1px solid #CADAE7;
+	padding: 5px 5px 5px 10px;
+	margin: 0 5px 5px;
+	float: right;
+}
+#eb_docs dt,
+#eb_row dt {
+	float: left;
+	font-weight: bold;
+}
+
+#eb_docs dt {
+	width: 110px;
+}
+
+#eb_row dt {
+	width: 100px;
+}
+
+#eb_docs dd,
+#eb_row dd {
+	font-weight: normal;
+}
+
+#eb_docs dd {
+	margin-left: 90px;
+}
+#eb_row dd {
+	margin-left: 100px;
+}
+.eb_price {
+	color: #E43101 ; 
+}
+
+.bubble li {
+	list-style-type: none;
+	background-image: none;
+	line-height: 18px;
+	margin-left: 2px;
+	font-size: 13px;
+}
+
+.bubble .location_name {
+	font-weight: bold;
+}
+
+li.getdirection a {
+	font-weight: bold;
+}
+
+div#detail_right {
+	float: right ;
+	width: 40%;
+}
+div#detail_left {
+	float: left ;
+	width: 58% ;
+}
+.eb_no_column {
+	text-align: center ;
+}
+.eb_number_registrant_column {
+	text-align: center ;
+}
+.eb_rate_column {
+	text-align: right;
+}
+/*Calendar view for css*/
+
+.regpro_calendar { 
+	background-color:#29363E;
+    color:#000000;
+	vertical-align:top;
+}
+.regpro_calendarMonthHeader{
+	background-color: #29363E;	
+	text-align:center;
+	vertical-align:middle;
+	border-left: 1px solid #65879B;
+	border-top: 1px solid #65879B;
+}
+.regpro_calendar_table {
+
+}
+.regpro_calendarWeekDayHeader {
+	font-weight: bolder;
+	background: #3E525E url(../images/tile.gif) repeat-x center bottom;
+	text-align:center;
+	vertical-align:middle;
+	padding: 5px;
+	color: #fff;
+	border-left: 1px solid #4F6A79;
+} 
+.regpro_calendarDay { 
+	background-color: #efefef;
+	width:60px;
+	height:60px;
+	text-align:left;
+	font-weight:bolder;
+	vertical-align:top;
+	font-size:12px;
+	font-style:normal;
+	border-left: 1px solid #FFFFFF;
+    border-top: 1px solid #FFFFFF;
+	padding: 5px;
+}
+.regpro_calenderday_highlight {
+	background-color: #DAD9CE;
+	text-align:left;
+	vertical-align:top;
+	font-weight:bolder;
+	width:60px;
+	height:60px;
+	padding: 5px;
+	border-left: 1px solid #FFFFFF;
+    border-top: 1px solid #FFFFFF;
+}
+.regpro_calendar_years{	
+	height:22px;
+	text-align:left;
+	border: 0px #c9d8fc;
+	background-color: #efefef;	
+	vertical-align:top;
+	margin: 0;
+	font-size:14px;
+}
+.regpro_calendar_years:hover{
+	background:#FFFFFF;
+}
+.regpro_calendar_months{	
+	height:22px;
+	text-align:left;
+	border: 0px #c9d8fc;
+	background-color: #efefef;	
+	vertical-align:top;
+	margin: 0;
+	font-size:14px;
+}
+.regpro_calendar_months:hover{
+	background:#FFFFFF;
+}
+h1.location_header {
+	margin-top: 5px ;
+}
+a.view_map_link {
+	padding-left: 10px ;
+	font-weight: bold ;
+	font-size: 90% ;
+}
+.eb_notice {
+	background-color : #FCF3F3 ;
+	border : 1px solid  #FDE2E2;	
+	margin : 20px 0 30px ;
+	padding: 8px ; 
+	width: 60%;
+	text-align: center ;
+	font-style: italic; 
+}
+.eb_notice_table {
+	background-color : #FCF3F3 ;
+	border : 1px solid  #FDE2E2;		
+	padding: 3px ; 
+	width: 100%;
+	padding: 4px;
+	text-align: center ;
+	font-style: italic; 
+}
+.eb_row_heading {
+	font-weight: bold ;
+	font-size: 120% ;
+}
+td.title_cell {
+	width: 30% ;
+}
+.location_link {
+	font-weight: bold ;
+	color: #446611 ;
+}
+table.header td.caption {
+	text-align: left !important ;
+}
+.coupon_row {
+		
+}
+.invalid {
+	color : red ;
+}
+/*Social bookmark*/
+#eb-social-buttons-box {
+  width: 100%;
+  float: left;
+  border-bottom: thin solid #808080
+}
+#eb-social-buttons-box h4 {
+  border-bottom: thin solid #808080;
+}
+#eb_share_text {
+	float: left ;
+	font-weight: bold ;
+	padding-top: 15px ;	
+	font-size: 150% ;
+}
+#eb_share_button {
+	float: left ;	
+	margin-left: 10px ;
+}
+#fb_share_button {
+	display: inline ;
+}
+/*Registrant list style*/
+.list_first_name {
+	width: 15% ;
+}
+.list_last_name {
+	width: 9% ;
+}
+.list_event {
+	
+}
+.list_event_date {
+	width: 10% ;
+}
+.list_email {
+	width: 10% ;
+}
+.list_registrant_number {
+	width: 8% ;
+}
+.list_amount {
+	text-align: right ;
+	width: 6% ;
+}
+.list_id {
+	text-align: center ;
+	width: 0% ;
+}
+/**CSS for cart page**/
+.col_no {
+	width: 5% ;
+}
+.col_action {
+	width : 10% ;
+	text-align: center ;
+}
+.col_quantity {
+	width : 12% ;
+	text-align: center ;
+}
+.col_price {
+	text-align: right ;
+	width: 10% ;
+}
+.quantity_box {
+	text-align: center ;
+}
+span.total_amount {
+	font-weight: bold ;
+}
+.col_subtotal {
+	text-align: right ;
+}
+.qty_title, .eb_rate {
+	font-weight: bold ;	
+} 
+span.error {
+	color : red ;
+	font-size: 150% ;
+}
+.col_event_date {
+	width: 17% ;
+	text-align: center ;
+}
+span.view_list {
+	font-weight: bold ;
+}
+.eb_form_header {
+	font-weight: bold ;
+	font-size: 15px ;
+}
+/**Borrow some admin-css for adding events from front-end*/
+/* standard form style table */
+div.col { float: left; }
+div.width-45 { width: 45%; }
+div.width-55 { width: 55%; }
+div.width-50 { width: 50%; }
+div.width-70 { width: 70%; }
+div.width-30 { width: 30%; }
+div.width-60 { width: 60%; }
+div.width-40 { width: 40%; }
+div.width-100 { width: 100%; }
+
+table.admintable td 					 { padding: 3px; }
+table.admintable td.key,
+table.admintable td.paramlist_key {
+	background-color: #f6f6f6;
+	text-align: right;
+	width: 140px;
+	color: #666;
+	font-weight: bold;
+	border-bottom: 1px solid #e9e9e9;
+	border-right: 1px solid #e9e9e9;
+}
+
+table.paramlist td.paramlist_description {
+	background-color: #f6f6f6;
+	text-align: left;
+	width: 170px;
+	color: #333;
+	font-weight: normal;
+	border-bottom: 1px solid #e9e9e9;
+	border-right: 1px solid #e9e9e9;
+}
+
+table.admintable td.key.vtop { vertical-align: top; }
+
+table.adminform {
+	background-color: #f9f9f9;
+	border: solid 1px #d5d5d5;
+	width: 100%;
+	border-collapse: collapse;
+	margin: 8px 0 10px 0;
+	margin-bottom: 15px;
+	width: 100%;
+}
+table.adminform.nospace { margin-bottom: 0; }
+table.adminform tr.row0 { background-color: #f9f9f9; }
+table.adminform tr.row1 { background-color: #eeeeee; }
+
+table.adminform th {
+	font-size: 11px;
+	padding: 6px 2px 4px 4px;
+	text-align: left;
+	height: 25px;
+	color: #000;
+	background-repeat: repeat;
+}
+table.adminform td { padding: 3px; text-align: left; }
+
+table.adminform td.filter{
+	text-align: left;
+}
+
+table.adminform td.helpMenu{
+	text-align: right;
+}
+
+
+fieldset.adminform { border: 1px solid #ccc; margin: 0 10px 10px 10px; background: none ; }
+
+/** Table styles **/
+
+table.adminlist {
+	width: 100%;
+	border-spacing: 1px;
+	background-color: #e7e7e7;
+	color: #666;
+}
+
+table.adminlist td,
+table.adminlist th { padding: 4px; }
+
+table.adminlist thead th {
+	text-align: center;
+	background: #f0f0f0;
+	color: #666;
+	border-bottom: 1px solid #999;
+	border-left: 1px solid #fff;
+}
+
+table.adminlist thead a:hover { text-decoration: none; }
+
+table.adminlist thead th img { vertical-align: middle; }
+
+table.adminlist tbody th { font-weight: bold; }
+
+table.adminlist tbody tr			{ background-color: #fff;  text-align: left; }
+table.adminlist tbody tr.row1 	{ background: #f9f9f9; border-top: 1px solid #fff; }
+
+table.adminlist tbody tr.row0:hover td,
+table.adminlist tbody tr.row1:hover td  { background-color: #ffd ; }
+
+table.adminlist tbody tr td 	   { height: 25px; background: #fff; border: 1px solid #fff; }
+table.adminlist tbody tr.row1 td { background: #f9f9f9; border-top: 1px solid #FFF; }
+
+table.adminlist tfoot tr { text-align: center;  color: #333; }
+table.adminlist tfoot td,
+table.adminlist tfoot th { background-color: #f3f3f3; border-top: 1px solid #999; text-align: center; }
+
+table.adminlist td.order 		{ text-align: center; white-space: nowrap; }
+table.adminlist td.order span { float: left; display: block; width: 20px; text-align: center; }
+
+table.adminlist .pagination { display:table; padding:0;  margin:0 auto;	 }
+
+/* Mini Calendar */
+
+.eb_minicalendar_monthyear{
+	color:#F0F0F0;
+	cursor:pointer;
+	font-weight:bold;
+	height:21px !important;
+	line-height:21px;
+	text-align:center !important;
+	width:100% !important;
+}
+
+a.mod_eb_minicalendar_link:link {
+	color:white;
+}
+a.mod_eb_minicalendar_link:hover {
+	color:yellow;
+}
+
+.eb_minicalendar_monthyear a.mod_eb_minicalendar_link {
+	color:#F0F0F0;
+	font-weight:bold !important;
+	text-decoration:none;
+}
+
+.mod_eb_mincalendar_table{
+	font-family:Arial;
+	font-size:12px;
+	font-style:normal;
+	margin-bottom:0.25em;
+	text-align:center;
+	text-decoration:none;
+	width:100% !important;	
+}
+
+.mod_eb_mincalendar_dayname{
+	font-family:Arial;
+	font-size:12px;
+	font-style:normal;
+	text-align:center;
+	text-decoration:none;
+}
+
+.mod_eb_mincalendar_td_dayname {
+	color:#F0F0F0;
+	font-weight:bold;
+	height:15px !important;
+	line-height:15px;
+	text-align:center !important;
+}
+
+.mod_eb_mincalendar_td_dayname .sunday {
+	color:#99AAAA;
+}
+
+.mod_eb_mincalendar_td_dayname .saturday {
+	color:#99AAAA;
+}
+
+td.mod_eb_mincalendar_today {
+	background-color: #FFFFFF;
+    color: #000000;
+	padding:0 !important;
+}
+td.mod_eb_mincalendar_not_today,td.mod_eb_mincalendar_no_event a {
+	font-size: 11px;
+    font-style: normal;
+    font-weight: bold;
+    padding: 3px 2px;
+	color: #fff;
+}
+
+td.mod_eb_mincalendar_event{
+	background-color:#607F93;
+	padding:0 !important;
+}
+
+a.eb_minical_link:hover{
+	color:yellow;
+	text-decoration:none;
+}
+
+a.eb_minical_link SPAN.sunday {
+	color:#99AAAA;
+}
+
+a.eb_minical_link SPAN.saturday {
+	color:#99AAAA;
+}
+
+td.mod_eb_mincalendar_event a, td.mod_eb_mincalendar_event a.eb_minical_link span.sunday, td.mod_eb_mincalendar_event a.eb_minical_link SPAN.saturday {
+	color: #fff;
+}
+
+.extcal_minical .extcal_navbar {
+    background-repeat: repeat-x;
+    border-bottom: 1px solid #B4B4B6;
+}
+
+.extcal_minical .extcal_month_label a {
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.mod_eb_minicalendar_link {
+	color: #FFFFFF;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+#extcalendar .topmenu_calendar ul li {
+	float: left;
+	margin: 0 0 0 5px;
+	padding: 0;
+	list-style: none;
+	display: block;
+}
+
+#extcalendar .topmenu_calendar ul li {
+	line-height: normal;
+}
+
+/**Search Module*/
+table.search_table, table.search_table td, table.search_table td select#category_id, table.search_table td select#location_id, table.search_table td input#search_eb_box{
+	width: 100% ;
+}
+/**EB Location module**/
+span.number_events {
+	font-size: 95% ;
+	font-weight: bold ;
+}
+/*Submit event form*/
+div.current {
+	max-width: 850px !important ;
+}
+}

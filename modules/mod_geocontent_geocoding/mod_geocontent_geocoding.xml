@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+          type="module"
+          version="1.6.0"
+          client="site"
+          method="upgrade">
+    <name>GeoContent GeoCoding</name>
+    <author>Alessandro Pasotti (ItOpen)</author>
+    <creationDate>2012-06-05</creationDate>
+    <copyright>Copyright (C) 2011 ItOpen. All rights reserved.</copyright>
+    <license>http://www.fsf.org/licensing/licenses/agpl-3.0.htm GNU/Affero</license>
+    <authorEmail>info@itopen.it</authorEmail>
+    <authorUrl>www.itopen.org</authorUrl>
+    <version>17_27</version>
+    <description>MOD_GEOCONTENT_GEOCODING_DESC</description>
+	<files>
+	<filename module="mod_geocontent_geocoding">mod_geocontent_geocoding.php</filename>
+    <filename>index.html</filename>
+    <filename>helper.php</filename>
+    <folder>tmpl</folder>
+    <folder>language</folder>
+	</files>
+
+
+  <config>
+      <fields name="params">
+          <fieldset name="basic">
+        <field name="map_url" type="text" default="" label="Map URL" description="Enter here the URL of the page where the GeoContent map is shown" />
+        <field name="show_layers_label" type="list" default="0" label="Show layers label" description="Select whether the label for layers options will be shown.">
+            <option value="1">Show</option>
+            <option value="0">Hide</option>
+        </field>
+        <field name="layers_label" type="text" default="Choose a layer:" label="Layers label" description="The label to be shown before the layers options" />
+        <field name="layers_list_mode" type="list" default="ul" label="Layers list mode" description="Appearance of the layers list: list or all in a row.">
+            <option value="ul">Unordered list</option>
+            <option value="p">Paragraph</option>
+            <option value="n">JNONE</option>
+        </field>
+        <field name="br_after_label" type="list" default="0" label="Add BR tag after label" description="Select whether the label will be followed by a BR tag (carriage return).">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </field>
+        <field name="@spacer" type="spacer" default="" label="" description="" />
+        <field name="show_address_label" type="list" default="0" label="Show address label" description="Select whether the label for address will be shown.">
+            <option value="1">Show</option>
+            <option value="0">Hide</option>
+        </field>
+        <field name="address_label" type="text" default="Address:" label="Address label" description="Enter the label to show before the address" />
+        <field name="address_size" type="text" default="20" label="Address field size" description="Enter the size (integer number) for the address field" />
+        <field name="@spacer" type="spacer" default="" label="" description="" />
+        <field name="search_label" type="text" default="Go" label="Search button label" description="Enter the label to show in the search button" />
+        <field name="@spacer" type="spacer" default="" label="" description="" />
+
+        <field name="not_found_message" label="Address not found message" type="text" default="Address not found!" description="Enter the message to show when an address is not found." />
+        <field name="gmap_zoomstart" type="list" default="13" label="Map zoom level" description="Insert here the zoom level for the map when an address is found">
+            <option value="0">Zoom level 0</option>
+            <option value="1">Zoom level 1</option>
+            <option value="2">Zoom level 2</option>
+            <option value="3">Zoom level 3</option>
+            <option value="4">Zoom level 4</option>
+            <option value="5">Zoom level 5</option>
+            <option value="6">Zoom level 6</option>
+            <option value="7">Zoom level 7</option>
+            <option value="8">Zoom level 8</option>
+            <option value="0">Zoom level 9</option>
+            <option value="10">Zoom level 10</option>
+            <option value="11">Zoom level 11</option>
+            <option value="12">Zoom level 12</option>
+            <option value="13">Zoom level 13</option>
+            <option value="14">Zoom level 14</option>
+            <option value="15">Zoom level 15</option>
+            <option value="16">Zoom level 16</option>
+            <option value="17">Zoom level 17</option>
+            <option value="18">Zoom level 18</option>
+            <option value="19">Zoom level 19</option>
+            <option value="20">Zoom level 20</option>
+        </field>
+		<field name="@spacer" type="spacer" default="" label="" description="" />
+		<field name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+    </fieldset>
+	</fields>
+    </config>
+</extension>

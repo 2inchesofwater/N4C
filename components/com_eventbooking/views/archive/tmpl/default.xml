@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Events Archive">
+		<message>
+			Display past events from a category or from all categories
+		</message>
+	</layout>
+	<state>
+		<name>Events Archive</name>
+		<description>Display past events from a category or from all categories</description>
+		<params addpath="/administrator/components/com_eventbooking/elements">
+			<param name="category_id" type="ebcategory" size="3" default="0" label="Select Category" description="Choose the category which you want to display events" />						
+		</params>
+		<fields name="params">			
+			<fieldset name="request"
+				addfieldpath="/administrator/components/com_eventbooking/elements">
+				<field name="category_id" type="ebcategory" size="3" default="0" label="Select Category" description="Choose the category which you want to display events" />
+			</fieldset>	
+		</fields>			
+	</state>
+</metadata>

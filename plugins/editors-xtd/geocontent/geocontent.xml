@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.6" type="plugin" group="editors-xtd" method="upgrade">
+	<name>Button - GeoContent</name>
+    <author>Alessandro Pasotti (ItOpen)</author>
+	<creationDate>2012-06-05</creationDate>
+	<copyright>Copyright (C) 2011 ItOpen. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>info@itopen.it</authorEmail>
+	<authorUrl>www.itopen.it</authorUrl>
+	<version>17_27</version>
+	<description>GeoContent editor plugin</description>
+	<files>
+		<filename plugin="geocontent">geocontent.php</filename>
+	</files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+		        <field name="button_text" type="text" default="GeoContent" label="Button text" description="The text for the editor's button"/>
+            </fieldset>
+        </fields>
+    </config>
+</extension>
