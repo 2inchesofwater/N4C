@@ -48,17 +48,17 @@ window.addEvent('domready', function(){
 				$i++;
 				$images = json_decode($item->images);
 			?>
-				<div class="accordionItemWrapper"><h3 <?php if ($i==1){echo "class=\"first-child\"";}?> ><img src="images/pins/pin-<?php echo $item->category_title; ?>.png" /><?php echo $item->title; ?></h3>
+				<div class="accordionItemWrapper"><h3 <?php if ($i==1){echo "class=\"first-child\"";}?> >
+                <img src="images/pins/pin-<?php echo $item->category_title; ?>.png" /><?php echo $item->title; ?></h3>
 				<div class="content">
-					<p>
-					<?php echo $item->displayIntrotext; ?>
-					</p>
-					<a href="<?php echo $item->link;?>" class="readmore">Read more</a>
 					<?php if($images->image_intro) : ?>
 					<div class="thumbnail">
                     <img class="image_intro" title="<?php echo htmlspecialchars($images->image_intro_caption); ?>" src="<?php echo htmlspecialchars($images->image_intro); ?>" alt="<?php echo htmlspecialchars($images->image_intro_alt); ?>" />
                     </div>
-			<?php endif; ?>  
+					<?php endif; ?> 
+                    <p><?php echo $item->displayIntrotext; ?></p>
+					<a href="<?php echo $item->link;?>" class="readmore">Read more</a>
+ 
 		</div></div>
         
 		<?php } ?>

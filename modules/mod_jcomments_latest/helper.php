@@ -15,12 +15,13 @@ class modJCommentsLatestHelper
 		}
 		
 		$date = JFactory::getDate();
-		$now = $date->toMySQL();
 
 		if (version_compare(JVERSION,'1.6.0','ge')) {
+			$now = $date->toSql();
 			$access = array_unique(JAccess::getAuthorisedViewLevels($user->get('id')));
 			$access[] = 0; // for backward compability
 		} else {
+			$now = $date->toMySQL();
 			$access = $user->get('aid', 0);
 		}
 
@@ -38,6 +39,56 @@ class modJCommentsLatestHelper
 
 
 		$where = array();
+
+		$interval = $params->get('interval', '');
+		if (!empty($interval)) {
+
+			$timestamp = $date->toUnix();
+
+			switch($interval) {
+				case '1-day':
+				 	$timestamp = strtotime('-1 day', $timestamp);
+					break;
+
+				case '1-week':
+				 	$timestamp = strtotime('-1 week', $timestamp);
+					break;
+
+				case '2-week':
+				 	$timestamp = strtotime('-2 week', $timestamp);
+					break;
+
+				case '1-month':
+				 	$timestamp = strtotime('-1 month', $timestamp);
+					break;
+
+				case '3-month':
+				 	$timestamp = strtotime('-3 month', $timestamp);
+					break;
+
+				case '6-month':
+				 	$timestamp = strtotime('-6 month', $timestamp);
+					break;
+
+				case '1-year':
+				 	$timestamp = strtotime('-1 year', $timestamp);
+					break;
+				default:
+				 	$timestamp = NULL;
+					break;
+			}
+
+			if ($timestamp !== NULL) {
+				$dateFrom = JFactory::getDate($timestamp);
+				$dateTo = $date;
+
+				if (version_compare(JVERSION,'1.6.0','ge')) {
+					$where[] = 'c.date BETWEEN ' . $db->Quote($dateFrom->toSQL()) . ' AND ' . $db->Quote($dateTo->toSQL());
+				} else {
+					$where[] = 'c.date BETWEEN ' . $db->Quote($dateFrom->toMySQL()) . ' AND ' . $db->Quote($dateTo->toMySQL());
+				}
+			}
+		}
 
 		$where[] = 'c.published = 1';
 		$where[] = 'c.deleted = 0';
@@ -108,7 +159,15 @@ class modJCommentsLatestHelper
 			$acl = JCommentsFactory::getACL();
 
 			if ($show_avatar) {
-				JCommentsEvent::trigger('onPrepareAvatars', array(&$list));
+				JPluginHelper::importPlugin('jcomments');
+			
+				if (version_compare(JVERSION, '3.0', 'ge')) {
+					$dispatcher = JEventDispatcher::getInstance();
+				} else {
+					$dispatcher = JDispatcher::getInstance();
+				}
+
+				$dispatcher->trigger('onPrepareAvatars', array(&$list));
 			}
 
 			foreach($list as &$item) {
@@ -140,7 +199,7 @@ class modJCommentsLatestHelper
 				$item->displayCommentLink = $item->object_link . '#comment-' . $item->id;
 
 				$text = JCommentsText::censor($item->comment);
-				$text = preg_replace('#\[quote[^\]]*?\](((?R)|.)*?)\[\/quote\]#ism' . JCOMMENTS_PCRE_UTF8, '', $text);
+				$text = preg_replace('#\[quote[^\]]*?\](((?R)|.)*?)\[\/quote\]#ismu', '', $text);
 				$text = $bbcode->filter($text, true);
 				$text = JCommentsText::fixLongWords($text, $config->getInt('word_maxlength'), ' ');
 
@@ -237,13 +296,19 @@ class modJCommentsLatestHelper
 	        if (version_compare(JVERSION,'1.6.0','ge')) {
 			$result = JText::plural($text, $value);
 	        } else {
-			require_once (JPATH_SITE.'/components/com_jcomments/libraries/joomlatune/language.tools.php');
-			$language = JFactory::getLanguage();
-			$suffix = JoomlaTuneLanguageTools::getPluralSuffix($language->getTag(), $value);
-			$key = $text . '_' . $suffix;
-			if (!$language->hasKey($key)) {
+	        	$toolsPath = JPATH_SITE.'/components/com_jcomments/libraries/joomlatune/language.tools.php';
+	        	if (is_file($toolsPath)) {
+				require_once ($toolsPath);
+				$language = JFactory::getLanguage();
+				$suffix = JoomlaTuneLanguageTools::getPluralSuffix($language->getTag(), $value);
+				$key = $text . '_' . $suffix;
+				if (!$language->hasKey($key)) {
+					$key = $text;
+				}
+			} else {
 				$key = $text;
 			}
+
 			$result = JText::sprintf($key, $value);
 	        }
 
@@ -252,13 +317,16 @@ class modJCommentsLatestHelper
 
 	public static function getRelativeDate($value, $countParts = 1)
 	{
-
-		$config = JFactory::getConfig();
-		$tzoffset = $config->getValue('config.offset');
+	        if (version_compare(JVERSION,'1.6.0','ge')) {
+			$tz = new DateTimeZone(JFactory::getApplication()->getCfg('offset'));
+			$now = JFactory::getDate();
+			$now->setTimeZone($tz);
+		} else {
+			$offset = JFactory::getConfig()->getValue('config.offset');
+			$now = new JDate();
+			$now->setOffset($offset);
+		}
 		
-		$now = new JDate();
-		$now->setOffset($tzoffset);
-
 		$date = new JDate($value);
 
 		$diff = $now->toUnix() - $date->toUnix();

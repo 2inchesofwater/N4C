@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" client="site" version="2.5" method="upgrade">
 	<name>JComments Latest</name>
-	<creationDate>06/12/2012</creationDate>
+	<creationDate>03/10/2013</creationDate>
 	<author>smart</author>
-	<copyright>Copyright 2006-2012 Joomlatune.ru All rights reserved!</copyright>
+	<copyright>Copyright 2006-2013 Joomlatune.ru All rights reserved!</copyright>
 	<authorEmail>smart@joomlatune.ru</authorEmail>
 	<authorUrl>http://www.joomlatune.ru</authorUrl>
 	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
-	<version>3.0.1</version>
+	<version>3.0.4</version>
 	<description>MOD_JCOMMENTS_LATEST_XML_DESCRIPTION</description>
 	<files>
 		<filename module="mod_jcomments_latest">mod_jcomments_latest.php</filename> 
@@ -44,6 +44,8 @@
 		<language tag="fa-IR">fa-IR/fa-IR.mod_jcomments_latest.sys.ini</language>
 		<language tag="fr-FR">fr-FR/fr-FR.mod_jcomments_latest.ini</language>
 		<language tag="fr-FR">fr-FR/fr-FR.mod_jcomments_latest.sys.ini</language>
+		<language tag="hu-HU">hu-HU/hu-HU.mod_jcomments_latest.ini</language>
+		<language tag="hu-HU">hu-HU/hu-HU.mod_jcomments_latest.sys.ini</language>
 		<language tag="it-IT">it-IT/it-IT.mod_jcomments_latest.ini</language>
 		<language tag="it-IT">it-IT/it-IT.mod_jcomments_latest.sys.ini</language>
 		<language tag="km-KH">km-KH/km-KH.mod_jcomments_latest.ini</language>
@@ -70,12 +72,16 @@
 		<language tag="sr-RS">sr-RS/sr-RS.mod_jcomments_latest.sys.ini</language>
 		<language tag="sr-YU">sr-YU/sr-YU.mod_jcomments_latest.ini</language>
 		<language tag="sr-YU">sr-YU/sr-YU.mod_jcomments_latest.sys.ini</language>
+		<language tag="sv-SE">sv-SE/sv-SE.mod_jcomments_latest.ini</language>
+		<language tag="sv-SE">sv-SE/sv-SE.mod_jcomments_latest.sys.ini</language>
 		<language tag="th-TH">th-TH/th-TH.mod_jcomments_latest.ini</language>
 		<language tag="th-TH">th-TH/th-TH.mod_jcomments_latest.sys.ini</language>
 		<language tag="tr-TR">tr-TR/tr-TR.mod_jcomments_latest.ini</language>
 		<language tag="tr-TR">tr-TR/tr-TR.mod_jcomments_latest.sys.ini</language>
 		<language tag="uk-UA">uk-UA/uk-UA.mod_jcomments_latest.ini</language>
 		<language tag="uk-UA">uk-UA/uk-UA.mod_jcomments_latest.sys.ini</language>
+		<language tag="vi-VN">vi-VN/vi-VN.mod_jcomments_latest.ini</language>
+		<language tag="vi-VN">vi-VN/vi-VN.mod_jcomments_latest.sys.ini</language>
 		<language tag="zh-CN">zh-CN/zh-CN.mod_jcomments_latest.ini</language>
 		<language tag="zh-CN">zh-CN/zh-CN.mod_jcomments_latest.sys.ini</language>
 	</languages>
@@ -97,6 +103,22 @@
 					default="5"
 					label="MOD_JCOMMENTS_LATEST_FIELD_ITEMS_LABEL"
 					description="MOD_JCOMMENTS_LATEST_FIELD_ITEMS_DESC" />
+
+				<field
+					name="interval"
+					type="list"
+					default=""
+					label="MOD_JCOMMENTS_LATEST_FIELD_INTERVAL_LABEL"
+					description="MOD_JCOMMENTS_LATEST_FIELD_INTERVAL_DESC">
+					<option value="">MOD_JCOMMENTS_LATEST_OPTION_ALL_TIME</option>
+					<option value="1-day">MOD_JCOMMENTS_LATEST_OPTION_1_DAY</option>
+					<option value="1-week">MOD_JCOMMENTS_LATEST_OPTION_1_WEEK</option>
+					<option value="2-week">MOD_JCOMMENTS_LATEST_OPTION_2_WEEK</option>
+					<option value="1-month">MOD_JCOMMENTS_LATEST_OPTION_1_MONTH</option>
+					<option value="3-month">MOD_JCOMMENTS_LATEST_OPTION_3_MONTH</option>
+					<option value="6-month">MOD_JCOMMENTS_LATEST_OPTION_6_MONTH</option>
+					<option value="1-year">MOD_JCOMMENTS_LATEST_OPTION_1_YEAR</option>
+				</field>
 
 				<field name="comments_grouping" type="list"
 					default="none"

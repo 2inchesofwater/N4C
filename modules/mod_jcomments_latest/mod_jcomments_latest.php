@@ -5,7 +5,7 @@
  * @version 3.0
  * @package JComments
  * @author smart (smart@joomlatune.ru)
- * @copyright (C) 2006-2012 by smart (http://www.joomlatune.ru)
+ * @copyright (C) 2006-2013 by smart (http://www.joomlatune.ru)
  * @license GNU General Public License version 2 or later; see license.txt
  *
  **/
@@ -25,15 +25,11 @@ require_once (dirname(__FILE__).'/helper.php');
 if ($params->get('useCSS') && !defined ('_JCOMMENTS_LATEST_CSS')) {
 	define ('_JCOMMENTS_LATEST_CSS', 1);
 
-
 	$app = JFactory::getApplication('site');
-	$language = JFactory::getLanguage();
-
-	$style = $language->isRTL() ? 'style_rtl.css' : 'style.css';
-	
+	$style = JFactory::getLanguage()->isRTL() ? 'style_rtl.css' : 'style.css';
 	$css = 'media/' . $module->module . '/css/' . $style;
 
-	if (is_file(JPATH_SITE . DS . 'templates' . DS . $app->getTemplate() . DS . 'html' . DS . $module->module . DS . 'css' . DS . $style)) {
+	if (is_file(JPATH_SITE . '/templates/' . $app->getTemplate() . '/html/' . $module->module . '/css/' . $style)) {
 		$css = 'templates/' . $app->getTemplate() . '/html/' . $module->module . '/css/' . $style;
 	}
 

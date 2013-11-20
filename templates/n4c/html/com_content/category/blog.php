@@ -61,7 +61,7 @@ JHtml::addIncludePath(JPATH_COMPONENT.'/helpers');
     <section class="blockContainer">
        <?php foreach ($this->lead_items as &$item) : ?>
 		 <?php if ($leadingcount==0) { ?>
-            <ul class="featured">
+            <ul class="featured unstyled">
          <?php } else {?>
            <ul>
          <?php } ?>  
@@ -107,7 +107,7 @@ JHtml::addIncludePath(JPATH_COMPONENT.'/helpers');
 
    <?php endif; ?>
 
-   <ul>
+   <ul class="unstyled">
 
    <!-- <div class="item column-<?php echo $rowcount;?><?php echo $item->state == 0 ? ' system-unpublished' : null; ?>"> -->
 

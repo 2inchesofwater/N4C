@@ -30,6 +30,7 @@
 
 	<positions>
 		<position>nav</position>
+		<position>breadcrumbs</position>
 		<position>comments</position>
 		<position>related</position>
 		<position>artwork</position>

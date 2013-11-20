@@ -117,9 +117,9 @@ $doc->addScript( JURI::root(true).'/media/system/js/init_map.js' );
 	#mapSelectorsContainer ul li{float:left;width:120px;text-align:center;position:relative;}
 	#mapSelectorsContainer .icon{width:48px;height:48px;position:absolute;left:-15px;z-index:20;top:-10px;}
 	#mapSelectorsContainer li.selected .icon{top:3px;}
-	#eventsMapSelector .icon{background: url(./images/pins/pin-orange.png);}
-	#projectsMapSelector .icon{background: url(./images/pins/pin-crimson.png);}
-	#newsMapSelector .icon{background: url(./images/pins/pin-yellow.png);}
+	#eventsMapSelector .icon{background: url(../images/pins/pin-orange.png);}
+	#projectsMapSelector .icon{background: url(../images/pins/pin-crimson.png);}
+	#newsMapSelector .icon{background: url(../images/pins/pin-yellow.png);}
 	.item_list li{overflow:hidden;}
 	.pin img{display:none;}
 	.pin img.visible{display:block;};
@@ -146,7 +146,7 @@ echo "<body class='home'>";
 echo "<body class='sitewide'>";	
 }?> 
 <body>
-    <ul class="skiplinks">
+    <ul id="skiplinks">
       <li><a href="#main" class="accessibility"><?php echo JText::_('TPL_N4C_SKIP_TO_CONTENT'); ?></a></li>
       <li><a href="#nav" class="accessibility"><?php echo JText::_('TPL_N4C_JUMP_TO_NAV'); ?></a></li>
     </ul>
@@ -165,7 +165,7 @@ echo "<body class='sitewide'>";
                   </a></h1>
                   <p><?php echo htmlspecialchars($templateparams->get('sitedescription'));?></p>
                   <?php if (htmlspecialchars($templateparams->get('logoreadmore')) !=""): ?>
-	                  <p><a href="<?php echo htmlspecialchars($templateparams->get('logoreadmore'));?>" class="readmore">Read more</a></p>
+	                  <a href="<?php echo htmlspecialchars($templateparams->get('logoreadmore'));?>" class="readmore">Read more</a>
 					<?php endif; ?>
                 </div>
                 <jdoc:include type="modules" name="nav" />
@@ -173,13 +173,17 @@ echo "<body class='sitewide'>";
             </header>
             
             
-            <div id="content-top" class="<?php if ($menu->getActive() == $menu->getDefault()) { echo 'home'; } ?>">
+            <div id="content-main" class="<?php if ($menu->getActive() == $menu->getDefault()) { echo 'home'; } ?>">
                 <jdoc:include type="message" />
-                <article id="main"><jdoc:include type="component" /></article>
+                <article id="main">
+					<?php if ($this->countModules('breadcrumbs')): ?>
+                      <section id="breadcrumbs"><jdoc:include type="modules" name="breadcrumbs" /></section>
+                    <?php endif; ?>
+                    <jdoc:include type="component" />
+                </article>
             </div>
         
-        <div id="content-wrapper">
-            <div id="content-right">
+            <div id="content-aside">
 				<?php if ($this->countModules('map')): ?>
                   <section id="map"><jdoc:include type="modules" name="map" /></section>
                 <?php endif; ?>
@@ -191,7 +195,7 @@ echo "<body class='sitewide'>";
                 <?php endif; ?>
             </div>
             
-        	<div id="content-left">
+        	<div id="content-follow">
 				<?php if ($this->countModules('related')): ?>    
                   <section id="related"><jdoc:include type="modules" name="related" /></section>
                 <?php endif; ?>
@@ -202,7 +206,6 @@ echo "<body class='sitewide'>";
                   <section id="artwork"><jdoc:include type="modules" name="artwork" /></section>
                 <?php endif; ?>
             </div>
-         </div>
             
             <footer>
             <div id="footer-left">
