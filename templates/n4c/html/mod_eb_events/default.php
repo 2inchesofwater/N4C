@@ -19,12 +19,11 @@
 	}
 	if (count($rows)) {
 	?>
-<section class="blockContainer component_group" id="<?php echo $module->title; ?>">
-<article>
-<a href="#" title="See all <?php echo $module->title; ?>">
-<h2><?php echo $module->title; ?></h2>
-</a>
-<ul class="">
+<div class="floating_panel related_panel events" id="<?php echo $module->title; ?>">
+<h2><a href="<?php echo JRoute::_('index.php?option=com_eventbooking&view=category&layout=table'); ?>" title="See all <?php echo $module->title; ?>">
+<?php echo $module->title; ?></a></h2>
+
+<ul class="unstyled">
   <?php
 				$tabs = array('sectiontableentry1' , 'sectiontableentry2');
 				$k = 0 ;
@@ -33,27 +32,29 @@
 					$k = 1 - $k ; 
 				?>
   <li class="component_list">
-    <h3><a href="<?php echo JRoute::_('index.php?option=com_eventbooking&task=view_event&event_id='.$row->id.'&Itemid='.$itemId); ?>" class="eb_event_link"><?php echo $row->title ; ?></a></h3>
-    <div class="pin"> <img src="./images/pins/pin-yellow.png"/> </div>
-    <div class="details">
+    <h3><a href="<?php echo JRoute::_('index.php?option=com_eventbooking&task=view_event&event_id='.$row->id.'&Itemid='.$itemId); ?>" class=""><?php echo $row->title ; ?></a></h3>
+      <dl class="datetime">
+      	<dd class="date"><?php echo date("D j F", strtotime($row->event_date)); ?></dd>
+        <dt class="time"><?php echo date("g:ia", strtotime($row->event_date)); ?></dt>
+      </dl>
       <p class="location"><?php echo $row->location_name ; ?></p>
-      <?php echo $row->short_description; ?> </div>
-    <div class="datetime"><p class="date"><?php echo date("D j F", strtotime($row->event_date)); ?></p><p class="time"><?php echo date("g:ia", strtotime($row->event_date)); ?></p> </div>
-    <div class="readmore">
-    <a class="button" href="<?php echo JRoute::_('index.php?option=com_eventbooking&task=view_event&event_id='.$row->id.'&Itemid='.$itemId); ?>">More info + RSVP</a>
-    </div>
+      <div class="description"><?php echo $row->short_description; ?></div>
+      <a class="readmore" href="<?php echo JRoute::_('index.php?option=com_eventbooking&task=view_event&event_id='.$row->id.'&Itemid='.$itemId); ?>">More info + RSVP</a>
     </li>
   <?php
 	}
   ?>
 </ul>
-</article>
-<a class="component_followOn" href="#">See all Events</a>
-</section>
-<?php	
-	} else {
-	?>
-<div class="eb_empty"><?php echo JText::_('EB_NO_EVENTS') ?></div>
-<?php	
-	}
-?>
+<a class="seeall" href="<?php echo JRoute::_('index.php?option=com_eventbooking&view=category&layout=table'); ?>">See all Events</a>
+</div>
+
+<?php } else { ?>
+
+    <div class="eb_empty accordion">
+        <h2><a href="<?php echo JRoute::_('index.php?option=com_eventbooking'); ?>" title="See all <?php echo $module->title; ?>">
+            <?php echo $module->title; ?>
+        </a></h2>
+        <?php echo JText::_('EB_NO_EVENTS') ?>
+    </div>
+
+<?php } ?>

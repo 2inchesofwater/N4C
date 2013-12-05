@@ -28,10 +28,10 @@ $greyBox = JURI::base().'components/com_eventbooking/assets/js/greybox/';
       </section>
       <section class="blockContainer component_group" id="<?php echo $this->category->name;?>">
   <?php } else { ?>
-    <h2 class="eb_title"><?php echo $this->category->name;?></h2>
+    <h2 class="eb_title">Events</h2>
   <?php } ?>
 
-    <ul>
+    <ul class="unstyled">
       <?php
 			$tabs = array('sectiontableentry1', 'sectiontableentry1');
 			$total = 0 ;
@@ -48,17 +48,17 @@ $greyBox = JURI::base().'components/com_eventbooking/assets/js/greybox/';
 	        	}				
 	        	$k = 1 - $k ;
 			?>
-      <li class="component_list">
+      <li class="events-list">
         <h3><a href="<?php echo JRoute::_('index.php?option=com_eventbooking&task=view_event&event_id='.$item->id); ?>" class="eb_event_link"><?php echo $item->title ; ?></a></h3>
         <div class="pin"> <img src="./images/pins/pin-yellow.png"/> </div>
-        <div class="details">
-          <p class="location"><?php echo $item->location_name ; ?></p>
-          <?php echo $item->short_description; ?> </div>
-        <div class="datetime">
-          <p class="date"><?php echo date("D j F", strtotime($item->event_date)); ?></p>
-          <p class="time"><?php echo date("g:ia", strtotime($item->event_date)); ?></p>
-        </div>
-        <div class="readmore"> <a class="button" href="<?php echo JRoute::_('index.php?option=com_eventbooking&task=view_event&event_id='.$item->id); ?>">More info + RSVP</a> </div>
+        
+        <dl class='datetime'>
+            <dd class='date'><?php echo date("D j F", strtotime($item->event_date)); ?></dd>
+            <dt class="time"><?php echo date("g:ia", strtotime($item->event_date)); ?></dt>
+        </dl>
+        <p class="location"><?php echo $item->location_name ; ?></p>
+		<div class="description"><?php echo $item->short_description; ?></div>
+        <a class="readmore" href="<?php echo JRoute::_('index.php?option=com_eventbooking&task=view_event&event_id='.$item->id); ?>">More info + RSVP</a>
       </li>
       <?php } } ?>
 

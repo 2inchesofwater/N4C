@@ -37,7 +37,7 @@ if (strlen($msg)) {
 	$msg = str_replace('[EVENT_DATE]', JHTML::_('date', $this->event->event_date, $this->config->event_date_format, $param), $msg) ;
 	$msg = str_replace('[AMOUNT]', EventBookingHelper::formatCurrency($this->amount, $this->config), $msg) ;			
 ?>								
-	<div class="msg"><?php echo $msg ; ?></div>							 															
+	<div class="blockContainer floating_panel msg"><?php echo $msg ; ?></div>							 															
 <?php	
 }
 ?>		

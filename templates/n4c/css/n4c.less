@@ -119,7 +119,7 @@ epsecially changes to body.width and position.fixed settings */
     { -webkit-box-shadow: inset @shadowSizeX  @shadowSizeY @shadowSizeBlur 0px @shadowColor; box-shadow: inset @shadowSizeX @shadowSizeY @shadowSizeBlur 0px @shadowColor;}
 .innershadowlite(@shadowSizeX:0px,@shadowSizeY:-5px,@shadowSizeBlur:15px,@shadowColor:rgba(0,0,0,0.1) )
     { -webkit-box-shadow: inset @shadowSizeX  @shadowSizeY @shadowSizeBlur 0px @shadowColor; box-shadow: inset @shadowSizeX @shadowSizeY @shadowSizeBlur 0px @shadowColor;}
-.shadowText(@shadowSizeX:1px,@shadowSizeY:1px,@shadowSizeBlur:0px,@shadowColor:rgba(0,0,0,0.5) ) 
+.shadowText(@shadowSizeX:1px,@shadowSizeY:1px,@shadowSizeBlur:2px,@shadowColor:rgba(0,0,0,0.25) ) 
     { text-shadow: @shadowSizeX @shadowSizeY @shadowSizeBlur @shadowColor; }
 .transition 
     { -webkit-transition: all 250ms ease-in-out; -moz-transition: all 250ms ease-in-out; -ms-transition: all 250ms ease-in-out;
@@ -147,7 +147,7 @@ h1 { font-size: 2em; line-height:2.5em; color: @mid; }
 h2 { font-size: 1.5em; line-height:1.5em; color: @midgreen; text-transform: uppercase;}
 h3 { font-size: 1.25em; line-height:1.5em; color: @dark; }
 h4 { font-size: 1.2em;}
-h5 {}
+h5 { font-size: 0.85em; font-family: @fontSemiBold; color:@midgreen; margin:0; }
 h6 {}
 h1 a { color: @mid; }
 h2 a { color: @mid; }
@@ -166,26 +166,44 @@ ul.horizontal li:last-child, ol.horizontal li:last-child { margin-right:0; }
 
 img, a img { border:0; }
 
+dl { display:block; clear:both; width: 100%; overflow:auto; }
+dd { display:inline-block; }
+dt { display:inline-block; }
+
+input, select, textarea { font-family: @fontRegular; font-size:1em; }
+
+button, input[type="button"], .button { 
+    text-align:center; font-family: @fontExtra; font-size:1.2em; color: @white;
+    border:0; border-top: 1px solid @mid; border-bottom: 1px solid @mid; background-color:@light;
+    display: inline-block; padding: 0.5em 1em; margin:0; cursor: pointer; .shadowText }
+button:hover, input[type="button"]:hover, .button:hover { 
+    text-decoration: none; background-color:@blue; }
+button.secondary, input[type="button"].secondary { 
+    text-align:left; font-family: @fontRegular; font-size:1em; color: @midgreen; cursor: pointer; 
+    border:0; background-color:transparent; padding:0; .shadowText(0,0,0); }
+button.secondary:hover, input[type="button"].secondary:hover { 
+    color: @darkgreen; background-color: transparent; text-decoration: underline; }
+a.button:hover { color:@white; }
+a.button strong { font-weight:normal; }
 
 
-/*Miscellaneous instructions*/
-
-
+/*Miscellaneous atom instructions*/
+.readmore, .readmore-link { font-family: @fontBold; font-size:0.8em; text-transform: uppercase; color: @verydark; } //.readmore applies to a single article or content item
+.readmore:hover { color: @midgreen; text-decoration: none; }
+.seeall { text-align:right; font-family: @fontExtra; font-size:1.2em; color: @darkgreen; } // .seeall applies to links to Section pages
+.seeall:hover { color: @midgreen; text-decoration: none; }
 
 /* 3. Molecule
 Reusable elements made up of Atoms; common variants to Atom styles (ie, not attached to a specific #id block)
 Examples: Basic form labels and inputs, Main Nav menu, Utility Nav menu, Footer Nav menu, Copyright Notice, Pagination block, table of contents 
 Should primarily deal with the visual/whitespace relationship between Atoms. Rare use of media queries here */
-.readmore, .readmore-link { display: block; font-family: @fontBold; font-size:0.8em; text-transform: uppercase; 
-    padding:0.5em 0 0 0; color: @verydark; background-image: url(); } //.readmore applies to a single article or content item
-.readmore:hover { color: @midgreen; text-decoration: none; }
-.seeall { display:block; text-align:right; font-family: @fontExtra; font-size:1.2em; padding-top:1em; color: @darkgreen; } // .seeall applies to links to Section pages
-.seeall:hover { color: @midgreen; text-decoration: none; }
+.readmore, .readmore-link { padding:0.5em 0 0 0; background-image: url(); } //.readmore applies to a single article or content item
+.seeall { display:block; padding-top:1em; } // .seeall applies to links to Section pages
 
-button, 
-#content-aside input[type="submit"] { display: block; width: 100%; background-color: @white; border:0; border-top: 1px solid @mid; border-bottom: 1px solid @mid;
-    font-family: @fontExtra; font-size:1.2em; text-align:center; color: @darkgreen; padding: 0.5em 0; cursor:pointer; }
-#content-aside input[type="submit"]:hover { color:@midgreen; }
+dl { margin:0; }
+dd { margin:0 0.25em 0 0; }
+
+form input[type="button"].secondary { width:10em; margin:0;}
 
 #logo h1 { margin:0; }
 #logo h1 a { display:block; line-height:0; }
@@ -198,29 +216,35 @@ header .menu li { overflow: auto; }
 .menu li.active a { font-weight: bold; color: @midgreen; background-color:light; .transition; .innershadowlite; }
 .menu li.active a:hover { text-decoration: none; .transition }
 
-.accordion h2 { margin-bottom: 0; }
-.accordion h2 a { color:@darkgreen; }
-.accordion h2 a:hover { color: @midgreen; }
-.accordion h3 { color: @dark; font-size:0.8em; font-family: @fontSemiBold; margin: 0 0 5px 25px; }
-.accordion h3:after { content:' [open]'; color:@blue; font-size: 0.9em;}
-.accordion h3:hover { color:@midgreen; cursor:pointer; }
-.accordion h3.active-accordion { color: @dark; font-size:1.05em; font-family:@fontBold; line-height:1em;  }
-.accordion h3.active-accordion:after { content:''; }
-.accordion h3.active-accordion:hover { cursor:default; color:@dark; }
-.accordion h3 img { position:relative; top:5px; margin: 0 5px 0 -25px; display: inline-block; clear:right;}
-.accordion p { margin-bottom:0; }
-.accordion .thumbnail { width: calc(~'100% - 20px'); margin: 0.5em 0; border:0.5em solid white; background-color: @dark;.shadow; 
+.related_panel h2 { margin-bottom: 0; }
+.related_panel h2 a { color:@darkgreen; }
+.related_panel h2 a:hover { color: @midgreen; }
+.related_panel h3 { color: @dark; font-size:0.8em; font-family: @fontSemiBold; margin: 0 0 5px 25px; }
+.related_panel h3:after { content:' [open]'; color:@blue; font-size: 0.9em;}
+.related_panel h3:hover { color:@midgreen; cursor:pointer; }
+.related_panel.events h3 { font-size:1.05em; font-family:@fontBold; line-height:1em; margin:1em 0 0.25em 0;}
+.related_panel.events h3:hover { color:@midgreen; text-decoration: none; }
+.related_panel.events h3:after { content:''; }
+.related_panel h3.active-accordion { color: @dark; font-size:1.05em; font-family:@fontBold; line-height:1em;  }
+.related_panel h3.active-accordion:after { content:''; }
+.related_panel h3.active-accordion:hover { cursor:default; color:@dark; }
+.related_panel h3 img { position:relative; top:5px; margin: 0 5px 0 -25px; display: inline-block; clear:right;}
+.related_panel p { margin-bottom:0; }
+.related_panel .thumbnail { width: calc(~'100% - 20px'); margin: 0.5em 0; border:0.5em solid white; background-color: @dark;.shadow; 
     position:relative; left:0.25em;}
-.accordion .thumbnail img { width: auto; max-width:100%; display: inline-block; margin: auto; }
+.related_panel .thumbnail img { width: auto; max-width:100%; display: inline-block; margin: auto; }
 
 .djslider .slide-title a { font-family: @fontExtra; font-size: 2em; line-height:1em; color: @blue; }
 .djslider .slide-title a:hover { color: @midgreen; text-decoration: none; }
 .djslider .slide-text p { color:@verylight; margin: 0; }
 
-#main .blockContainer:nth-of-type(2) { padding-top: 2em; } //Bug: I honestly have no idea why the HTML wants the first .blockContainer to be index #2
 .blockContainer li p:last-of-type { margin:0; }
 .home .blockContainer:nth-of-type(1){ padding-top: 1em; }
 .home .blockContainer li p:last-of-type { margin:0; }
+.extraContainer p:last-of-type { margin:0; }
+#main .blockContainer:nth-of-type(1) { padding-top: 2em; } //Bug: I honestly have no idea why the HTML wants the first .blockContainer to be index #2
+
+
 .item-page h2:nth-of-type(1) { margin: 0.5em 0 0 0; }
 .item-page h2:nth-of-type(1) a { color:@mid; cursor:default; } 
 .item-page p { width: (@masterWidth * 2);  }
@@ -229,12 +253,41 @@ header .menu li { overflow: auto; }
 .item-page dd { margin:0; }
 .item-page .breadcrumbs { font-size:0.8em; margin: 1em 0 0 0; }
 
+.datetime .date { font-family: @fontSemiBold; font-size:0.85em; color: @dark; }
+.datetime .time { font-family: @fontRegular; font-size:0.85em; color: @dark; }
+
+.events .location { font-family: @fontRegular; font-size:0.85em;  color: @darkgreen;  margin-bottom: 0.5em; }
+.events .location:before { content: 'Location'; font-family: @fontSemiBold; margin-right:0.25em; }
+.events .extraDetails .slug { text-align:left; width: 15%; min-width: 10em; font-family: @fontSemiBold; font-size:0.85em; color: @dark; }
+.events .extraDetails .rsvp-details { padding:0.5em 0; border-bottom:1px solid @verylight; }
+.events .extraDetails li:last-of-type .rsvp-details { border-bottom: 0; }
+.events .rsvp-actions { display:inline-block; float:left; margin-right:2em; }
+.events .rsvp-actions:last-of-type { margin-right:0; }
+
+.events .register label { width:10em; display:inline-block; vertical-align:top; padding-top:calc(~'0.5em + 2px'); }
+.events .register input[type="text"], .events .register select, .events .register textarea { padding:0.5em 0.75em; width:@masterWidth;}
+.events .register-username, .events .register-password2, .events .register-last_name, .events .register-organization, .events .register-address2, .events .register-country, .events .register-phone 
+    { margin-bottom:1em; }
+.events .register-methods, .events .register-cvv 
+    { margin-bottom:1em; }
+.events .register-number { margin-bottom:1em; }
+.events .payment-method-options { display: inline-block; }
+.events .register-expiry select { width:6em; }
+.events .register-cvv input[type="text"] { width:calc(~'11em + 2px'); }
+
+.events .invite label { width:10em; display:inline-block; vertical-align:top; padding-top:calc(~'0.5em + 2px'); }
+.events .invite input[type="text"], .events .invite select, .events .invite textarea { padding:0.5em 0.75em; width:@masterWidth;}
+.events .invite small { color: @blue; }
+
 .img-intro-left { display: inline-block; position: relative; float:right; width:@masterWidth; margin: 0 0 0 1em; padding: 0; 
     border:4px solid @white; background-color:@dark; .shadow }
 .img-intro-left img { width: auto; max-width: 100%; display:block; margin:auto; }
 .img-fulltext-left { display: inline-block; position: relative; float:right; width:@masterWidth; margin: 0 0 1em 1em; padding: 0; 
     border:4px solid @white; background-color:@dark; .shadow } 
 .img-fulltext-left img { width: auto; max-width: 100%; display:block; margin:auto; }
+
+#system-message .notice ul { background-image:url(); }
+#system-message .notice ul li:before { content:"! "; border: 2px solid @white; }
 
 /* 4. Organism
 Fully functional content module made up of Molecules; variants to Atoms and Molecules attached to a specific #id block
@@ -253,12 +306,14 @@ header .menu { width: auto; padding: 0; overflow:auto; background-color:white; }
 .home #logo p, .home #logo .readmore { display:block; }
 #logo img{ width: auto; max-width: 100%; }
 
-.accordion { display:inline-block; vertical-align:top; background-color: @white; .shadow; }
-.accordion .seeall { padding:0.5em 0; border-bottom: 1px solid @mid; border-top: 1px solid @mid;}
+.floating_panel { display:inline-block; vertical-align:top; background-color: @white; .shadow; }
+.floating_panel .seeall { padding:0.5em 0; border-bottom: 1px solid @mid; border-top: 1px solid @mid;}
+
+.floating_panel.events li { padding-bottom:0.5em; border-bottom: 1px solid @verylight; }
 .accordion .accordionItemWrapper { padding-bottom:0.5em; border-bottom: 1px solid @verylight; }
 .accordion .accordionItemWrapper:last-of-type { border-bottom: 0; }
 
-.djslider { position:relative; float:left; border: @font-size solid white; } 
+.djslider { position:relative; float:left; border: @font-size solid white; .shadow; } 
 .djslider ul { float:left; }
 .djslider .slider-container { position: absolute; overflow:hidden; left: 0; top: 0; height: 100%; width: 100%; }
 .djslider .slide-desc { position: absolute; padding: 1em 3em 1em 1em; top: 3em; right:0; color: @verylight; background-color: rgba(0,0,0,0.75); }
@@ -278,7 +333,8 @@ header .menu { width: auto; padding: 0; overflow:auto; background-color:white; }
 
 .blockContainer, .extraContainer { width: auto; display: block; overflow: auto; padding: 1em 2em; background-color:@white; margin-bottom:1em; }
 .home .blockContainer { width: auto; display: block; padding: 0; background-color:transparent; margin-bottom:0; }
-div.extraContainer { .shadow; margin-top:1em; padding:1em 2em 2em 2em !important; }
+.mapContainer { margin-bottom:1em; }
+.extraContainer { margin-bottom:1em; padding:1em 2em 2em 2em !important; }
 
 .item-page { width: auto; display: block; overflow: auto; padding: 1em 2em; background-color:@white; margin-bottom:1em; }
 .breadcrumbs { display:none; }
@@ -286,18 +342,20 @@ div.extraContainer { .shadow; margin-top:1em; padding:1em 2em 2em 2em !important
 #content-main, #content-aside, #content-follow { margin-top:1em; }
 #content-right section { padding:2em; }
 #map, #extra, #promo { width: 100%; }
-#map { position: relative; .shadow; }
+#map { position: relative; }
 
 #extra #poll_links { padding:0 !important; }
 
+.events .extraDetails { margin-bottom: 2em; }
+.events-list { margin-bottom:2em; }
 
 /* Organism media queries */
 @font-size:15px; //desktop size
 header .menu { padding-left: (@font-size * 10); } //value = #logo width + 2em gutters x2
 .home header .menu { padding-left: calc( @masterWidth + (@font-size * 5) ); } 
-.accordion { width: @masterWidth; margin: 0 @font-size @font-size 0; padding: @font-size @font-size * 2 @font-size * 2; }
-.accordion.features { width: @masterWidth * 2 + @font-size * 5; margin-right:0; }
-.accordion:nth-of-type(2n + 2) { margin-right:0; }
+.related_panel { width: @masterWidth; margin: 0 @font-size @font-size 0; padding: @font-size @font-size * 2 @font-size * 2; }
+.related_panel.features { width: @masterWidth * 2 + @font-size * 5; margin-right:0; }
+.related_panel:nth-of-type(2n + 2) { margin-right:0; }
 
 #logo { width:6em; margin:-2em 2em 0 2em; padding:0.5em; }
 .home #logo { width: 10em; padding:1em; }
@@ -307,7 +365,7 @@ header .menu { padding-left: (@font-size * 10); } //value = #logo width + 2em gu
 .djslider .slide-desc { width: @masterWidth - (@font-size * 2); }
 .djslider .navigation-container { top:@font-size*22 !important; }
 
-#map-canvas { height: 30em; border:1em solid white; }
+#map-canvas { height: 30em; width:calc(~'100% - 2em'); border:1em solid white; }
 /*end Organism media queries */
 
 

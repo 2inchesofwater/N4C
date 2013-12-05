@@ -26,7 +26,7 @@ JHtml::addIncludePath(JPATH_COMPONENT.'/helpers');
 
 ?>
 
-<section class="blockContainer <?php echo $this->pageclass_sfx;?>">
+<section class="blockContainer first <?php echo $this->pageclass_sfx;?>">
 	<?php if ($this->params->get('show_page_heading', 1)) : ?>
 	<h1>
 		<?php echo $this->escape($this->params->get('page_heading')); ?>
@@ -60,11 +60,7 @@ JHtml::addIncludePath(JPATH_COMPONENT.'/helpers');
 <?php if (!empty($this->lead_items)) : ?>
     <section class="blockContainer">
        <?php foreach ($this->lead_items as &$item) : ?>
-		 <?php if ($leadingcount==0) { ?>
-            <ul class="featured unstyled">
-         <?php } else {?>
-           <ul>
-         <?php } ?>  
+           <ul class="unstyled">
          <?php 
            $this->item = &$item;
            echo $this->loadTemplate('item');
@@ -101,12 +97,12 @@ JHtml::addIncludePath(JPATH_COMPONENT.'/helpers');
 
        if ($rowcount==1) : ?>
 
-	   <section class="blockContainer">
 
   <!--  <div class="items-row cols-<?php echo (int) $this->columns;?> <?php echo 'row-'.$row ; ?>"> -->
 
    <?php endif; ?>
 
+   <section class="blockContainer">
    <ul class="unstyled">
 
    <!-- <div class="item column-<?php echo $rowcount;?><?php echo $item->state == 0 ? ' system-unpublished' : null; ?>"> -->
@@ -122,6 +118,7 @@ JHtml::addIncludePath(JPATH_COMPONENT.'/helpers');
    <!-- </div> -->
 
    </ul>
+</section>
 
    <?php $counter++; ?>
 

@@ -3,10 +3,10 @@ img { border: 0 none; }
 
 h1.eb_title,
 h2.eb_title,
-h3.eb_title { width: auto !important; margin: 0 !important; padding: 0 !important; }
+h3.eb_title { /* width: auto !important; margin: 0 !important; padding: 0 !important; */ }
 
 h2.search_result_header {
-	margin-bottom: 8px ;
+	/* margin-bottom: 8px ; */
 }
 
 h1.location_header {
@@ -19,13 +19,13 @@ h1.location_header {
 
 
 .eb_props {
-	width: 240px;	
+	/* width: 240px; */	
 }
 
 
 /* ---------- Global styles ------------------------------------ */
 
-#eb_header {
+/* #eb_header {
 	height: 55px;
 	border-bottom: 1px dotted #ddd;
 	text-align: center;
@@ -50,7 +50,7 @@ h1.location_header {
 	padding: 3px 3px 3px 10px;
 }
 
-.eb_row { background: #FFF url(../images/bg-gradient.png) repeat-x; }
+.eb_row { background: #FFF url(../images/bg-gradient.png) repeat-x; } */
 
 
 /* ---------- Categories styles ------------------------------------- */

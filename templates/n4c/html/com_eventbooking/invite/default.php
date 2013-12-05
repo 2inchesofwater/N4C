@@ -10,67 +10,52 @@
 // no direct access
 defined( '_JEXEC' ) or die ;
 ?>
-<div style="width: 100%; margin: 15px;">
-<?php
-    if (version_compare(JVERSION, '1.6.0', 'ge')) {
-    ?>
-    	<h1 class="eb_title"><?php echo JText::_('EB_REGISTRATION_INVITE'); ?></h1>
-    <?php    
-    } else {
-    ?>
-    	<div class="componentheading"><?php echo JText::_('EB_REGISTRATION_INVITE'); ?></div>
-    <?php    
-    }
-	$message = $this->config->invitation_form_message ;
-	$message = str_replace('[EVENT_TITLE]', $this->event->title, $message) ;
-?>
+<link rel="stylesheet" href="/n4c/templates/n4c/css/n4c.css" type="text/css">
+<section class="events">
+
+<h2 class="eb_title"><?php echo JText::_('EB_REGISTRATION_INVITE'); ?></h2>
+
 <p class="message">
+	<?php
+        $message = $this->config->invitation_form_message ;
+        $message = str_replace('[EVENT_TITLE]', $this->event->title, $message) ;
+    ?>
 	<?php echo $message ; ?>
 </p>
+
+<div class="invite">
 <form name="adminForm" method="post" action="index.php?tmpl=component">
-	<table class="os_table" width="100%">
-		<tr>
-			<td>
-				<?php echo JText::_('EB_NAME'); ?>
-			</td>
-			<td>
-				<input type="text" name="name" value="<?php echo $this->user->get('name'); ?>" class="inputbox" size="50" />
-			</td>
-		</tr> 
-		<tr>
-			<td>
-				<?php echo JText::_('EB_FRIEND_NAMES'); ?>
+			
+            <div class="invite-name">
+			<label for="name"><?php echo JText::_('EB_NAME'); ?></label>
+			<input type="text" name="name" value="<?php echo $this->user->get('name'); ?>" class="inputbox" placeholder="Your name" />
+            </div>
+            
+            <div class="invite-friend_names">
+			<label for="friend_names"><?php echo JText::_('EB_FRIEND_NAMES'); ?>
 				<br />
-				<small><?php echo JText::_('EB_ONE_NAME_ONE_LINE'); ?></small>
-			</td>
-			<td>
+				<small><?php echo JText::_('EB_ONE_NAME_ONE_LINE'); ?></small></label>
 				<textarea rows="5" cols="50" name="friend_names" class="inputbox"></textarea>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<?php echo JText::_('EB_FRIEND_EMAILS'); ?>
+            </div>
+
+            <div class="invite-friend_emails">
+			<label for="friend_emails"><?php echo JText::_('EB_FRIEND_EMAILS'); ?>
 				<br />
-				<small><?php echo JText::_('EB_ONE_NAME_ONE_LINE'); ?></small>
-			</td>
-			<td>
+				<small><?php echo JText::_('EB_ONE_EMAIL_ONE_LINE'); ?></small></label>
 				<textarea rows="5" cols="50" name="friend_emails" class="inputbox"></textarea>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<?php echo JText::_('EB_MESSAGE'); ?>				
-			</td>
-			<td>
-				<textarea rows="10" cols="80" name="message" class="inputbox"></textarea>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				<input type="button" onclick="sendInvite()" value="<?php echo JText::_('EB_INVITE'); ?>" class="button" />	
-			</td>				
-		</tr>
-	</table>
+            </div>
+
+            <div class="invite-message">
+            	<label for="message"><?php echo JText::_('EB_MESSAGE'); ?></label>				
+				<textarea rows="5" name="message" class="inputbox"></textarea>
+            </div>
+
+			<div class="invite-actions">
+				<input type="button" onclick="sendInvite()" value="<?php echo JText::_('EB_INVITE'); ?>" class="button" />
+            </div>	
+
+
+
 	<script language="javascript">
 		function sendInvite(){
 			var form = document.adminForm ;
@@ -98,3 +83,4 @@ defined( '_JEXEC' ) or die ;
 	<input type="hidden" name="Itemid" value="<?php echo JRequest::getInt('Itemid'); ?>" />
 </form>
 </div>	
+</section>

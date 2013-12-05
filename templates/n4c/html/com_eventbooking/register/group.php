@@ -11,7 +11,7 @@
 defined( '_JEXEC' ) or die ;
 ?>
 
-<section class="blockContainer page" id="registration">
+<section class="blockContainer events" id="registration">
 
 <?php if ($this->config->fix_next_button) { ?>
 	<form method="post" name="adminForm" id="adminForm" class="horizontal" action="index.php?option=com_eventbooking&Itemid=<?php echo $this->Itemid; ?>" autocomplete="off" onsubmit="return checkData();">	
@@ -28,12 +28,17 @@ defined( '_JEXEC' ) or die ;
 if (strlen($msg)) { ?>								
 	<div class="eb_message"><?php echo $msg ; ?></div>							 															
 <?php }	?>		
+<div class="register">	
+   <div class="register-number">
    <label for="number_registrants"><?php echo  JText::_('EB_NUMBER_REGISTRANTS') ?><span class="required">*</span></label>
    <input type="text" class="inputbox" name="number_registrants" placeholder="<?php echo  JText::_('EB_NUMBER_REGISTRANTS') ?>" value="" />
+   </div>
 
+	<div class="register-actions">
    <input type="button" class="button secondary right" value="<?php echo JText::_('EB_BACK'); ?>" onclick="window.history.go(-1) ;" />
-   <input type="submit" class="button primary left" value="<?php echo JText::_('EB_NEXT'); ?>" />							
-
+   <input type="submit" class="button primary left" value="<?php echo JText::_('EB_NEXT'); ?>" />	
+   </div>						
+</div>
     	<?php
     		if ($this->collectMemberInformation) {
     		?>

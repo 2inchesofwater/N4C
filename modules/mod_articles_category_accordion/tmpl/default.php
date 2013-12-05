@@ -39,7 +39,7 @@ window.addEvent('domready', function(){
 	$n=0;
 	foreach ($list as $row) : 
 	
-		echo "<div id=\"accordion".$accordionid."_$n\" class=\"accordion ". current($row)->category_alias ."\">" ;
+		echo "<div id=\"accordion".$accordionid."_$n\" class=\" floating_panel related_panel accordion ". current($row)->category_alias ."\">" ;
 		$n++;
 		$i=0;
 

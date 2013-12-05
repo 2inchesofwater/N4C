@@ -12,16 +12,16 @@ defined( '_JEXEC' ) or die ;
 
 $headerText = JText::_('EB_GROUP_REGISTRATION_BILLING') ;
 ?>
-<section class="blockContainer page" id="registration">
 
-<?php if ($this->config->fix_next_button) {
-?>
+<?php if ($this->config->fix_next_button) { ?>
 	<form method="post" name="adminForm" id="adminForm" class="vertical" action="<?php echo $this->url; ?>index.php?option=com_eventbooking&Itemid=<?php echo $this->Itemid; ?>" autocomplete="off">	
 <?php	 
 } else {
 ?>
 	<form method="post" name="adminForm" id="adminForm" class="vertical" action="<?php echo $this->url; ?>index.php" autocomplete="off">
 <?php }	?>
+
+<section class="blockContainer floating_panel events" id="registration">
 
 	<h2 class="eb_title"><?php echo $headerText; ?></h2>	
 
@@ -35,70 +35,83 @@ if (strlen($msg)) {
 	<div class="msg"><?php echo $msg ; ?></div>							 															
 <?php } ?>		
 
-
 	<?php if ($this->enableCoupon) { ?>
-<div class="coupon">
-		<label for="coupon"><?php echo  JText::_('EB_COUPON') ?><?php if ($this->errorCoupon) { ?><span class="invalid"><?php echo JText::_('EB_INVALID_COUPON'); ?></span><?php } ?></label>
-        <input type="text" class="inputbox" name="coupon_code" value="<?php echo $this->couponCode; ?>" id="coupon" placeholder="<?php echo  JText::_('EB_COUPON') ?>" />
-</div>
+    <div class="register coupon">
+            <label for="coupon"><?php echo  JText::_('EB_COUPON') ?><?php if ($this->errorCoupon) { ?><span class="invalid"><?php echo JText::_('EB_INVALID_COUPON'); ?></span><?php } ?></label>
+            <input type="text" class="inputbox" name="coupon_code" value="<?php echo $this->couponCode; ?>" id="coupon" placeholder="<?php echo  JText::_('EB_COUPON') ?>" />
+    </div>
 	<?php } ?>
 
 	<?php if (!$this->userId && $this->config->user_registration) { ?>				
-<div class="account">
-		<label for="username">
-			<?php echo  JText::_('EB_USERNAME') ?><?php if ($this->registrationErrorCode == 1 || $this->registrationErrorCode == 3) { ?><span class="invalid"><?php echo JText::_('EB_INVALID_USERNAME'); ?></span><?php } ?>
-        </label>
-        <input type="text" name="username" id="username" class="inputbox" value="<?php echo $this->username; ?>" placeholder="<?php echo  JText::_('EB_USERNAME') ?>" />
-
-		<label for="password"><?php echo  JText::_('EB_PASSWORD') ?></label>
-		<input type="password" name="password" id="password" class="inputbox" placeholder="<?php echo  JText::_('EB_PASSWORD') ?>" value="<?php echo $this->password; ?>" />
-
-		<label for="password2"><?php echo  JText::_('EB_RETYPE_PASSWORD') ?></label>	
-		<input type="password" name="password2" id="password2" class="inputbox" placeholder="<?php echo  JText::_('EB_RETYPE_PASSWORD') ?>" value="<?php echo $this->password ; ?>" />
-</div>
+    <div class="register account">
+        <div class="register-username">
+            <label for="username">
+                <?php echo  JText::_('EB_USERNAME') ?><?php if ($this->registrationErrorCode == 1 || $this->registrationErrorCode == 3) { ?><span class="invalid"><?php echo JText::_('EB_INVALID_USERNAME'); ?></span><?php } ?>
+            </label>
+            <input type="text" name="username" id="username" class="inputbox" value="<?php echo $this->username; ?>" placeholder="<?php echo  JText::_('EB_USERNAME') ?>" />
+        </div>
+        
+        <div class="register-password">
+            <label for="password"><?php echo  JText::_('EB_PASSWORD') ?></label>
+            <input type="password" name="password" id="password" class="inputbox" placeholder="<?php echo  JText::_('EB_PASSWORD') ?>" value="<?php echo $this->password; ?>" />
+        </div>
+    
+    	<div class="register-password2">
+            <label for="password2"><?php echo  JText::_('EB_RETYPE_PASSWORD') ?></label>	
+            <input type="password" name="password2" id="password2" class="inputbox" placeholder="<?php echo  JText::_('EB_RETYPE_PASSWORD') ?>" value="<?php echo $this->password ; ?>" />
+        </div>
 	<?php } ?>
 
-<div class="personal">
-	<div class="left half-width">
+<div class="register personal">
+
+	<div class="register-first_name">
 		<label for="first_name"><?php echo  JText::_('EB_FIRST_NAME') ?><span class="required">*</span></label>
         <input type="text" class="inputbox" name="first_name" id="first_name" placeholder="<?php echo  JText::_('EB_FIRST_NAME') ?>" value="<?php echo $this->firstName; ?>" required="required" />
 	</div>
 
-	<div class="left half-width-margin">
+	<div class="register-last_name">
 		<label for="last_name"><?php echo  JText::_('EB_LAST_NAME') ?><?php if ($this->config->r_lastname) echo '<span class="required">*</span>'; ?></label>
 		<input type="text" class="inputbox" name="last_name" id="last_name" placeholder="<?php echo  JText::_('EB_LAST_NAME') ?>" value="<?php echo $this->lastName; ?>" <?php if ($this->config->r_lastname) echo "required='required'"; ?> />
     </div>
 
-	<div class="left full-width">
-		<?php if ($this->config->s_organization) { ?>
-		<label for="organization"><?php echo  JText::_('EB_ORGANIZATION'); ?><?php if ($this->config->r_organization) echo '<span class="required">*</span>'; ?></label>
-		<input type="text" class="inputbox" name="organization" id="organization" placeholder="<?php echo  JText::_('EB_ORGANIZATION'); ?>" value="<?php echo $this->organization; ?>" <?php if ($this->config->r_organization) echo "required='required'"; ?> />
-		<?php } ?>
-	</div>
+	
+	<?php if ($this->config->s_organization) { ?>
+    <div class="register-organization">
+        <label for="organization"><?php echo  JText::_('EB_ORGANIZATION'); ?><?php if ($this->config->r_organization) echo '<span class="required">*</span>'; ?></label>
+        <input type="text" class="inputbox" name="organization" id="organization" placeholder="<?php echo  JText::_('EB_ORGANIZATION'); ?>" value="<?php echo $this->organization; ?>" <?php if ($this->config->r_organization) echo "required='required'"; ?> />
+    </div>
+    <?php } ?>
+	
 
-	<div class="left full-width">
-		<?php if ($this->config->s_address) { ?>
-			<label for="address"><?php echo  JText::_('EB_ADDRESS'); ?><?php if ($this->config->r_address) echo '<span class="required">*</span>'; ?></label>
-            <input type="text" class="inputbox" name="address" id="address" placeholder="<?php echo  JText::_('EB_ADDRESS'); ?>" value="<?php echo $this->address; ?>" <?php if ($this->config->r_address) echo "required='required'"; ?> />
-		<?php } ?>
-	</div>
+	
+	<?php if ($this->config->s_address) { ?>
+    <div class="register-address">
+    <label for="address"><?php echo  JText::_('EB_ADDRESS'); ?><?php if ($this->config->r_address) echo '<span class="required">*</span>'; ?></label>
+        <input type="text" class="inputbox" name="address" id="address" placeholder="<?php echo  JText::_('EB_ADDRESS'); ?>" value="<?php echo $this->address; ?>" <?php if ($this->config->r_address) echo "required='required'"; ?> />
+    </div>
+    <?php } ?>
+	
 
-	<div class="left full-width">   
-        <?php if ($this->config->s_address2) { ?>
-			<label for="address2"><?php echo  JText::_('EB_ADDRESS2'); ?><?php if ($this->config->r_address2) echo '<span class="required">*</span>'; ?></label>
-            <input type="text" class="inputbox" name="address2" id="address2" placeholder="<?php echo  JText::_('EB_ADDRESS2'); ?>" value="<?php echo $this->address2; ?>" <?php if ($this->config->r_address2) echo "required='required'"; ?> />
-		<?php } ?>
+   
+    <?php if ($this->config->s_address2) { ?>
+	<div class="register-address2">
+    	<label for="address2"><?php echo  JText::_('EB_ADDRESS2'); ?><?php if ($this->config->r_address2) echo '<span class="required">*</span>'; ?></label>
+        <input type="text" class="inputbox" name="address2" id="address2" placeholder="<?php echo  JText::_('EB_ADDRESS2'); ?>" value="<?php echo $this->address2; ?>" <?php if ($this->config->r_address2) echo "required='required'"; ?> />
 	</div>
+    <?php } ?>
+
     
-	<div class="left half-width">
-        <?php if ($this->config->s_city) { ?>
-			<label for="city"><?php echo JText::_('EB_CITY'); ?><?php if ($this->config->r_city) echo '<span class="required">*</span>'; ?></label>
-            <input type="text" class="inputbox" name="city" id="city" placeholder="<?php echo JText::_('EB_CITY'); ?>" value="<?php echo $this->city; ?>" <?php if ($this->config->r_city) echo "required='required'"; ?> />
-		<?php } ?>
-	</div>
+
+	<?php if ($this->config->s_city) { ?>
+    <div class="register-city">
+    <label for="city"><?php echo JText::_('EB_CITY'); ?><?php if ($this->config->r_city) echo '<span class="required">*</span>'; ?></label>
+        <input type="text" class="inputbox" name="city" id="city" placeholder="<?php echo JText::_('EB_CITY'); ?>" value="<?php echo $this->city; ?>" <?php if ($this->config->r_city) echo "required='required'"; ?> />
+    </div>
+    <?php } ?>
+
     
     <?php if ($this->config->s_state) { ?>
-		<div class="left quarter-width">
+		<div class="register-state">
 		<?php if ($this->config->display_state_dropdown) { ?>
 				<label for="state"><?php echo  JText::_('EB_STATE'); ?><?php if ($this->config->r_state) echo '<span class="required">*</span>'; ?></label>
                 <?php echo $this->lists['state'] ; ?>
@@ -110,50 +123,56 @@ if (strlen($msg)) {
     <?php } ?>
     
 	<?php if ($this->config->s_zip) { ?>
-    <div class="left quarter-width">
+    <div class="register-zip">
         <label for="zip"><?php echo  JText::_('EB_ZIP'); ?><?php if ($this->config->r_zip) echo '<span class="required">*</span>'; ?></label>
         <input type="text" class="inputbox" name="zip" id="zip" placeholder="<?php echo  JText::_('EB_ZIP'); ?>" value="<?php echo $this->zip; ?>" <?php if ($this->config->r_zip) echo "required='required'"; ?> />
     </div>
     <?php } ?>
 
-	<div class="left full-width">
+	<div class="register-country">
 	<?php if ($this->config->s_country) { ?>
         <label><?php echo  JText::_('EB_COUNTRY'); ?><?php if ($this->config->r_country) echo '<span class="required">*</span>'; ?></label>
         <?php echo $this->lists['country_list']; ?>
     <?php } ?>
 	</div>
 
-	<div class="left full-width">
+	<div class="register-phone">
 	<?php if ($this->config->s_phone) { ?>
         <label for="phone"><?php echo  JText::_('EB_PHONE'); ?><?php if ($this->config->r_phone) echo '<span class="required">*</span>'; ?></label>
         <input type="text" class="inputbox" name="phone" id="phone" placeholder="<?php echo  JText::_('EB_PHONE'); ?>" value="<?php echo $this->phone; ?>" <?php if ($this->config->r_phone) echo "required='required'"; ?> />
     <?php } ?>
 	</div>
 
-	<div class="left full-width">
+	<div class="register-fax">
 	<?php if ($this->config->s_fax) { ?>
         <label for="fax"><?php echo  JText::_('EB_FAX'); ?><?php if ($this->config->r_fax) echo '<span class="required">*</span>'; ?></label>
         <input type="text" class="inputbox" name="fax" id="fax" placeholder="<?php echo  JText::_('EB_FAX'); ?>" value="<?php echo $this->fax; ?>" <?php if ($this->config->r_fax) echo "required='required'"; ?> />
     <?php } ?>																		
 	</div>
 
-	<div class="left full-width">
+	<div class="register-email">
 	<label><?php echo  JText::_('EB_EMAIL'); ?><span class="required">*</span><?php if ($this->registrationErrorCode == 2) { ?><span class="invalid"><?php echo JText::_('EB_EMAIL_USED'); ?></span><?php } ?></label>
     <input type="text" class="inputbox" name="email" id="email" placeholder="<?php echo  JText::_('EB_EMAIL'); ?>" value="<?php echo $this->email; ?>" required='required' />
 
 	<?php if ($this->customField) { echo $this->fields ; }	?>
 	</div>
-</div>
+    
+</section>
+
 
 <?php if (($this->amount > 0) || $this->numberFeeFields) {	?>
-	<div class="payment">    
+<section class="blockContainer floating_panel events">
+	<div class="payment register">    
 	
-	<?php if ($this->depositPayment) { ?>			    	
+	<?php if ($this->depositPayment) { ?>	
+    	<div class="register-type">    	
     	<label><?php echo JText::_('EB_PAYMENT_TYPE') ; ?></label>
         <?php echo $this->lists['payment_type'] ; ?>
+        </div>
 	<?php }	?>
     
     <?php if (count($this->methods) > 1) { ?>
+    	<div class="register-method">
 		<label for="payment_method"><?php echo JText::_('EB_PAYMENT_OPTION'); ?><span class="required">*</span></label>
 		<?php
             $method = null ;
@@ -168,10 +187,13 @@ if (strlen($msg)) {
             ?>
                 <input onclick="changePaymentMethod();" type="radio" name="payment_method" value="<?php echo $paymentMethod->getName(); ?>" <?php echo $checked; ?> /><?php echo JText::_($paymentMethod->getTitle()); ?> <br />
         <?php }	?>
+        </div>
 	<?php } else { ?>
+    <div class="register-method">
 		<?php $method = $this->methods[0] ; ?>
 			<label class="visible"><?php echo JText::_('EB_PAYMENT_OPTION'); ?></label>
 			<?php echo JText::_($method->getTitle()); ?>
+     </div>
 	<?php }	?>
         
     <?php    																	
@@ -179,22 +201,26 @@ if (strlen($msg)) {
 			$style = '' ;	
 		} else {
 			$style = 'style = "display:none"';
-		} ?>			
-		<label for="card_holder_name"><?php echo JText::_('EB_CARD_HOLDER_NAME'); ?><span class="required">*</span></label>
-        <input type="text" name="card_holder_name" id="card_holder_name" class="inputbox" placeholder="<?php echo JText::_('EB_CARD_HOLDER_NAME'); ?>" value="<?php echo $this->cardHolderName; ?>" required='required' />
+		} ?>
+    <div class="register-cardholder" <?php echo $style; ?>>		
+    <label for="card_holder_name"><?php echo JText::_('EB_CARD_HOLDER_NAME'); ?><span class="required">*</span></label>
+    <input type="text" name="card_holder_name" id="card_holder_name" class="inputbox" placeholder="<?php echo JText::_('EB_CARD_HOLDER_NAME'); ?>" value="<?php echo $this->cardHolderName; ?>" required='required' />
+    </div>
+    
+    <div class="register-cardnumber" <?php echo $style; ?>>
+    <label for="x_card_num"><?php echo  JText::_('AUTH_CARD_NUMBER'); ?><span class="required">*</span></label>
+    <input type="text" name="x_card_num" id="x_card_num" class="inputbox" placeholder="<?php echo  JText::_('AUTH_CARD_NUMBER'); ?>" onkeyup="checkNumber(this)" value="<?php echo $this->x_card_num; ?>" required='required' />
+    </div>
 
-		<label for="x_card_num"><?php echo  JText::_('AUTH_CARD_NUMBER'); ?><span class="required">*</span></label>
-		<input type="text" name="x_card_num" id="x_card_num" class="inputbox" placeholder="<?php echo  JText::_('AUTH_CARD_NUMBER'); ?>" onkeyup="checkNumber(this)" value="<?php echo $this->x_card_num; ?>" required='required' />
-
-		<div class="left half-width">
-		<label class="visible"><?php echo JText::_('AUTH_CARD_EXPIRY_DATE'); ?><span class="required">*</span></label>
-		<?php echo $this->lists['exp_month'] .'  /  '.$this->lists['exp_year'] ; ?>
-		</div>
-        
-        <div class="left half-width">
-		<label for="x_card_code"><?php echo JText::_('AUTH_CVV_CODE'); ?><span class="required">*</span></label>
-		<input type="text" name="x_card_code" id="x_card_code" class="inputbox" placeholder="<?php echo JText::_('AUTH_CVV_CODE'); ?>" onKeyUp="checkNumber(this)" value="<?php echo $this->x_card_code; ?>" required="required" />
-        </div>
+    <div class="register-expiry" <?php echo $style; ?> >
+    <label class="visible"><?php echo JText::_('AUTH_CARD_EXPIRY_DATE'); ?><span class="required">*</span></label>
+    <?php echo $this->lists['exp_month'] .'  /  '.$this->lists['exp_year'] ; ?>
+    </div>
+    
+    <div class="register-cvv" <?php echo $style; ?>>
+    <label for="x_card_code"><?php echo JText::_('AUTH_CVV_CODE'); ?><span class="required">*</span></label>
+    <input type="text" name="x_card_code" id="x_card_code" class="inputbox" placeholder="<?php echo JText::_('AUTH_CVV_CODE'); ?>" onKeyUp="checkNumber(this)" value="<?php echo $this->x_card_code; ?>" required="required" />
+    </div>
 
 	<?php
         if ($method->getCardType()) {
@@ -202,8 +228,10 @@ if (strlen($msg)) {
         } else {
             $style = ' style = "display:none;" ' ;										
         } ?>
-		<label class="visible"><?php echo JText::_('EB_CARD_TYPE'); ?><span class="required">*</span></label>
-		<?php echo $this->lists['card_type'] ; ?>
+    <div class="register-cardtype" <?php echo $style; ?>>
+    <label class="visible"><?php echo JText::_('EB_CARD_TYPE'); ?><span class="required">*</span></label>
+    <?php echo $this->lists['card_type'] ; ?>
+    </div>
 
 
 	<?php
@@ -212,22 +240,31 @@ if (strlen($msg)) {
         } else {
             $style = ' style = "display:none;" ' ;
         } ?>
-		<label class="visible"><?php echo JText::_('EB_BANK_LIST'); ?><span class="required">*</span></label>
-        <?php echo $this->lists['bank_id'] ; ?>
-<?php } ?>
+    <div class="register-banks" <?php echo $style; ?>>
+    <label class="visible"><?php echo JText::_('EB_BANK_LIST'); ?><span class="required">*</span></label>
+    <?php echo $this->lists['bank_id'] ; ?>
+    </div>
+
 </div>		
-        	
-<div class="comment">
+</section>
+<?php } ?>
+  
 <?php if ($this->config->s_comment) { ?>
+<section class="blockContainer floating_panel events">
+	<div class="payment register" <?php echo $style; ?>> 
 		<label for="comment"><?php echo  JText::_('EB_COMMENT'); ?><?php if ($this->config->r_comment) echo '<span class="required">*</span>'; ?></label>
 		<textarea rows="7" cols="50" name="comment" id="comment" class="inputbox"><?php echo $this->comment;?></textarea>
+	</div>
+</section>
 <?php }	?>									
-</div>
 
-<div class="action">
+
+<section class="blockContainer floating_panel events">
+	<div class="action">
 			<input type="button" class="button right secondary" name="btnBack" value="<?php echo  JText::_('EB_BACK') ;?>" onclick="window.history.go(-1);">
 			<input type="button" class="button left primary" name="btnSubmit" value="<?php echo  JText::_('EB_REGISTRATION_CONFIRMATION') ;?>" onclick="checkData();">				
-</div>
+	</div>
+</section>
 
 
 

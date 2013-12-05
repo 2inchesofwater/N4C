@@ -26,7 +26,7 @@ if (version_compare(JVERSION, '1.6.0', 'ge')) {
     $format = 'Y-m-d' ;
     $param = null ;
 ?>
-	<h1 class="eb_title"><?php echo JText::_('EB_EDIT_REGISTRANT'); ?></h1>
+	<h1 class="TEST eb_title"><?php echo JText::_('EB_EDIT_REGISTRANT'); ?></h1>
 <?php        
 } else {
     $format = '%Y-%m-%d' ;

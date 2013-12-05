@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <extension version="2.5" type="plugin" group="content" method="upgrade">
+      <name>Geodata for Articles</name>
+      <author>Dan Gilmore</author>
+      <creationDate>November 2013</creationDate>
+      <copyright>(C) 2005 - 2013 Open Source Matters. All rights reserved.</copyright>
+      <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+      <authorEmail>dan@2inchesofwater.com</authorEmail>
+      <authorUrl>www.2inchesofwater.com</authorUrl>
+      <version>2.5.0</version>
+      <description>PLG_CONTENT_GEODATA_XML_DESCRIPTION</description>
+ 
+      <files>
+         <folder>language</folder>
+         <folder>geodata</folder>
+         <filename plugin="geodata">geodata.php</filename>
+         <filename>index.html</filename>
+      </files>
+ 
+		<languages folder="language">
+			<language tag="en-GB">en-GB.PLG_CONTENT_GEODATA.ini</language>
+			<language tag="en-GB">en-GB.PLG_CONTENT_GEODATA.sys.ini</language>
+		</languages>
+ 
+      <config>
+         <fields name="params">
+            <fieldset name="basic">
+               <field
+                  name="geodata_sfx"
+                  type="text"
+                  label="PLG_CONTENT_GEODATA_ITEM_FIELD_LATLON_LABEL"
+                  description="PLG_CONTENT_GEODATA_ITEM_FIELD_LATLON_DESC"
+               />
+            </fieldset>
+         </fields>
+      </config>
+   </extension>
